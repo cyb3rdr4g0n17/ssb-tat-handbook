@@ -26,8 +26,8 @@ class TATSimulator {
     this.evalBtn = document.getElementById(options.evalBtnId);
     this.evalResultsEl = document.getElementById(options.evalResultsId);
 
-    this.prompts = window.SSB_DATA ? window.SSB_DATA.sample_prompts : [];
-    this.currentPrompt = this.prompts[0] || null;
+    this.prompts = (window.SSB_DATA && Array.isArray(window.SSB_DATA.sample_prompts)) ? window.SSB_DATA.sample_prompts : [];
+    this.currentPrompt = this.prompts.length > 0 ? this.prompts[0] : null;
 
     this.state = 'idle'; // 'idle', 'observing', 'writing', 'finished'
     this.observeRemaining = 30;
@@ -41,7 +41,9 @@ class TATSimulator {
 
   init() {
     this.renderPromptOptions();
-    this.loadPrompt(0);
+    if (this.prompts.length > 0) {
+      this.loadPrompt(0);
+    }
     this.setupEventListeners();
   }
 

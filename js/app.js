@@ -5,6 +5,7 @@
 
 class AppController {
   constructor() {
+    window.app = this;
     this.currentTheme = localStorage.getItem('ssb_theme') || 'dark';
     this.activeTab = 'blueprint';
 
@@ -231,64 +232,105 @@ class AppController {
     if (!sit) return;
 
     const overlay = document.getElementById('situationSolverModal');
+    const badgeEl = document.getElementById('sitModalBadge');
+    const catEl = document.getElementById('sitModalCategory');
     const titleEl = document.getElementById('sitModalTitle');
     const descEl = document.getElementById('sitModalDesc');
-    const flowEl = document.getElementById('sitModalFlow');
-    const profsSelect = document.getElementById('sitSolverProfSelect');
-    const resultBox = document.getElementById('sitSolverResultBox');
+    const cuesEl = document.getElementById('sitModalPictureCues');
+    const profsListEl = document.getElementById('sitModalProfessionsList');
+    const modelStoryEl = document.getElementById('sitModalModelStory');
+    const storyWordCountEl = document.getElementById('sitModalStoryWordCount');
+    const blunderStoryEl = document.getElementById('sitModalBlunderStory');
+    const actionBreakdownEl = document.getElementById('sitModalActionBreakdown');
+    const olqsEl = document.getElementById('sitModalOLQs');
+    const practiceBtn = document.getElementById('sitPracticeBtn');
+    const copyBtn = document.getElementById('sitCopyStoryBtn');
 
-    if (titleEl) titleEl.textContent = `Situation #${sit.id}: ${sit.title}`;
+    if (badgeEl) badgeEl.textContent = `Situation #${sit.id}`;
+    if (catEl) {
+      catEl.textContent = sit.category || 'General';
+      const catColor = this.situationBank.getCategoryColor(sit.category);
+      catEl.style.color = catColor;
+      catEl.style.background = `${catColor}20`;
+    }
+    if (titleEl) titleEl.textContent = sit.title;
     if (descEl) descEl.textContent = sit.description;
-    if (flowEl) flowEl.textContent = sit.practice_flow;
+    if (cuesEl) cuesEl.textContent = sit.picture_cues || 'Examine the environment, tools present, expressions, and immediate source of friction.';
 
-    const recs = this.situationBank.getRecommendedProfessions(sit.title);
-    if (profsSelect) {
-      profsSelect.innerHTML = recs.map(p => `
-        <option value="${p.id}">${p.id}. ${p.name} (${p.domain_title})</option>
+    // Best Fit Professions
+    if (profsListEl && sit.best_fit_professions) {
+      profsListEl.innerHTML = sit.best_fit_professions.map(p => `
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 0.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span style="font-size: 0.7rem; color: var(--text-muted);">${p.domain}</span>
+            <strong style="display: block; font-size: 0.92rem; color: var(--text-primary); margin: 2px 0 4px 0;">${p.name}</strong>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">${p.reason}</p>
+          </div>
+        </div>
       `).join('');
     }
 
-    const generateBtn = document.getElementById('sitSolverGenerateBtn');
-    if (generateBtn && profsSelect && resultBox) {
-      generateBtn.onclick = () => {
-        const profId = profsSelect.value;
-        const p = this.explorer.getProfessionById(profId);
-        if (!p) return;
+    // Model Story & Word Count
+    if (modelStoryEl && sit.model_story) {
+      const words = sit.model_story.trim().split(/\s+/).length;
+      if (storyWordCountEl) storyWordCountEl.textContent = `${words} Words · Officer Grade`;
+      modelStoryEl.innerHTML = `"${sit.model_story}"`;
+    }
 
-        resultBox.style.display = 'block';
-        resultBox.innerHTML = `
-          <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--accent-success); margin-bottom: 0.5rem;">
-            🎯 Recommended TAT Resolution Chain for ${p.name}
-          </h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <strong>Environment:</strong> ${p.work_environment}
-          </p>
-          <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); font-size: 0.9rem; line-height: 1.6;">
-            <strong>Step 1 (Observe):</strong> Noticed the ${sit.title.toLowerCase()} in the work zone.<br>
-            <strong>Step 2 (Identify):</strong> Defined the core operational problem without panic.<br>
-            <strong>Step 3 (Plan & Initiate):</strong> Applied SOP: <em>"${p.professional_workflow.split('->')[0].trim()}"</em>.<br>
-            <strong>Step 4 (Coordinate & Execute):</strong> Coordinated with team and resources: <em>"${p.practical_action_sequence}"</em>.<br>
-            <strong>Step 5 (Measurable Result):</strong> Restored safety, documented details, and completed the primary objective calmly.
-          </div>
-          <button onclick="window.app.practiceFromSolver('${p.name}', '${sit.title}')" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">
-            🚀 Write Story with this Framework in Simulator →
-          </button>
-        `;
+    // Blunder Story
+    if (blunderStoryEl && sit.blunder_story) {
+      blunderStoryEl.innerHTML = `"${sit.blunder_story}"<br><br><span style="font-size: 0.78rem; font-weight: 600; color: #f87171;">⚠️ Why it fails: Shows violent melodrama, panic, or superhuman lone-wolf action without practical coordination.</span>`;
+    }
+
+    // 7-Step Action Breakdown
+    if (actionBreakdownEl && sit.action_logic_breakdown) {
+      const b = sit.action_logic_breakdown;
+      actionBreakdownEl.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+          <div><strong style="color: var(--accent-primary);">1. Observe:</strong> <span style="color: var(--text-primary);">${b.observe}</span></div>
+          <div><strong style="color: var(--accent-secondary);">2. Identify:</strong> <span style="color: var(--text-primary);">${b.identify}</span></div>
+          <div><strong style="color: var(--accent-warning);">3. Plan & Initiate:</strong> <span style="color: var(--text-primary);">${b.plan_initiate}</span></div>
+          <div><strong style="color: var(--accent-purple);">4. Coordinate:</strong> <span style="color: var(--text-primary);">${b.coordinate}</span></div>
+          <div><strong style="color: var(--accent-success);">5. Result:</strong> <span style="color: var(--text-primary);">${b.result}</span></div>
+        </div>
+      `;
+    }
+
+    // OLQs
+    if (olqsEl && sit.olqs_projected) {
+      olqsEl.innerHTML = sit.olqs_projected.map(o => `
+        <span class="prof-olq-tag" style="font-size: 0.8rem; padding: 4px 10px; cursor: pointer;" onclick="window.app.filterByOLQ('${o}')">
+          ${o}
+        </span>
+      `).join('');
+    }
+
+    // Practice button in Simulator
+    if (practiceBtn) {
+      practiceBtn.onclick = () => {
+        overlay.classList.remove('active');
+        this.switchTab('simulator');
+        if (this.simulator) {
+          const defaultProf = (sit.best_fit_professions && sit.best_fit_professions[0]) ? sit.best_fit_professions[0].name : 'Officer';
+          this.simulator.storyInput.value = `Rohan, a 26-year-old ${defaultProf}, was on duty when he noticed ${sit.title.toLowerCase()}... `;
+          this.simulator.updateCounters();
+          this.simulator.storyInput.focus();
+        }
+      };
+    }
+
+    // Copy button
+    if (copyBtn) {
+      copyBtn.onclick = () => {
+        if (sit.model_story) {
+          navigator.clipboard.writeText(sit.model_story).then(() => {
+            alert('Model story copied to clipboard!');
+          });
+        }
       };
     }
 
     if (overlay) overlay.classList.add('active');
-  }
-
-  practiceFromSolver(profName, situationTitle) {
-    const overlay = document.getElementById('situationSolverModal');
-    if (overlay) overlay.classList.remove('active');
-    this.switchTab('simulator');
-    if (this.simulator) {
-      this.simulator.storyInput.value = `Rohan, an experienced ${profName}, encountered a ${situationTitle.toLowerCase()} during an active assignment. He calmly assessed the immediate risk... `;
-      this.simulator.updateCounters();
-      this.simulator.storyInput.focus();
-    }
   }
 
   filterByDomain(domainId) {

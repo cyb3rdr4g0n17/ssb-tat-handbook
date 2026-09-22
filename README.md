@@ -69,10 +69,18 @@ Instant client-side fuzzy search across all 459 roles with multi-faceted filteri
 
 ---
 
-### 4. 🚨 25-Scenario TAT Situation Bank & Solver
-Interactive cards covering the 25 standard crisis/routine triggers tested in SSB:
-- *Accidents, Technical Failures, Resource Shortages, Weather Hazards, Evacuations, Cyber Incidents, Leadership Gaps, etc.*
-- **Interactive Solver**: Choose any scenario, select a matching professional role, and auto-generate the optimal 5-stage resolution blueprint.
+### 4. 🚨 25-Scenario TAT Situation Bank & Story Intelligence Dossier
+Interactive reference covering the 25 standard crisis, leadership, and operational triggers tested in SSB:
+- **Categorized Filtration**: Rapidly filter across *Crisis & Emergency*, *Technical & Engineering*, *Logistics & Operations*, and *People & Leadership*.
+- **3 Best-Fit Professions with Real-World Justifications**: Clear explanation of which roles naturally possess the tools, authority, and procedures to resolve each crisis.
+- **🌟 Officer-Grade Model Stories (90–110 words)**: Exemplary past-tense narratives demonstrating ground-level competence and team coordination.
+- **⚠️ Candidate Blunder Traps**: Real examples of melodrama, lone-wolf heroism, and panic stories contrasted against the recommended officer response.
+- **7-Step Action Logic Breakdown**: Step-by-step trace showing *Observe ➔ Identify ➔ Plan & Initiate ➔ Coordinate ➔ Result*.
+- **1-Click Simulator Integration**: Click *Practice / Adapt This Story in Simulator* to launch timed practice immediately.
+
+<p align="center">
+  <img src="assets/screenshots/situation_story_dossier.png" alt="Situation Intelligence & Model Story Dossier" width="90%" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
+</p>
 
 ---
 

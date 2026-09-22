@@ -9405,152 +9405,978 @@ window.SSB_DATA = {
     {
       "id": "01",
       "title": "Accident / Injury",
-      "description": "A person is injured in a public place and people nearby are uncertain what to do.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "category": "Crisis & Emergency",
+      "description": "A person is injured in a public place, workplace, or road, and nearby bystanders are panicked or uncertain what to do.",
+      "picture_cues": "A person lying on the ground, a crowd gathered in hesitation, two individuals conferring, vehicles or road shoulder visible.",
+      "best_fit_professions": [
+        {
+          "name": "Traffic Police Officer",
+          "domain": "03. Police & Law Enforcement",
+          "reason": "Manages traffic diversion, cordons area, and summons medical assistance rapidly."
+        },
+        {
+          "name": "Paramedic / Nursing Officer",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Conducts immediate ABC triage (Airway, Breathing, Circulation) and stabilizes patient."
+        },
+        {
+          "name": "Site Safety Supervisor",
+          "domain": "07. Engineering",
+          "reason": "Applies workplace first aid protocol and secures site machinery to prevent secondary hazards."
+        }
+      ],
+      "model_story": "Aakash, a 24-year-old physical training instructor, was returning home when he noticed a commuter thrown from a two-wheeler at a busy intersection. Quickly assessing that traffic was continuing dangerously close, Aakash stepped in and directed two bystanders to place warning reflectors and divert vehicles. Checking the victim, he confirmed clear breathing and applied firm pressure with a clean cloth to a bleeding forearm laceration while keeping the person warm and conscious. He had a shopkeeper call the local emergency ambulance and notified the commuter's family via their mobile phone. Once paramedics arrived, Aakash briefed them on the vital signs, helped load the stretcher, and resumed his commute after traffic normalized.",
+      "blunder_story": "Rohan was passing by and saw his arch-enemy bleeding to death after being attacked by terrorists. Rohan fought off the remaining terrorists with martial arts, picked the injured man on his back, and ran 15 kilometers to the city hospital without calling an ambulance.",
+      "olqs_projected": [
+        "Initiative",
+        "Practical Intelligence",
+        "Sense of Responsibility",
+        "Cooperation",
+        "Effective Communication"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Noticed injured commuter on road with oncoming traffic hazard.",
+        "identify": "Primary threat is secondary collision and blood loss.",
+        "plan_initiate": "Diverted traffic using bystanders; initiated first-aid pressure.",
+        "coordinate": "Summoned 108 ambulance via shopkeeper; briefed paramedics.",
+        "result": "Victim stabilized, safely handed over to medical personnel; traffic cleared."
+      }
     },
     {
       "id": "02",
       "title": "Technical Failure",
-      "description": "A critical machine or system fails shortly before an important activity.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "category": "Technical & Engineering",
+      "description": "A critical machine, generator, server, or transmission system fails shortly before an important operation or deadline.",
+      "picture_cues": "Two or three people standing near open electrical panels, machinery, or engines, inspecting tools or diagnostic screens.",
+      "best_fit_professions": [
+        {
+          "name": "Mechanical Engineer",
+          "domain": "07. Engineering",
+          "reason": "Diagnoses physical drive, cooling, or pressure failure and uses auxiliary bypass."
+        },
+        {
+          "name": "Electrical Supervisor",
+          "domain": "10. Skilled Trades",
+          "reason": "Inspects breaker relays, checks voltage drop, and swaps out burnt fuses."
+        },
+        {
+          "name": "Systems Administrator",
+          "domain": "08. IT & Technology",
+          "reason": "Activates failover cluster and inspects error logs to restore connectivity."
+        }
+      ],
+      "model_story": "Sameer, a 26-year-old electrical maintenance engineer at an industrial bottling plant, noticed the main conveyor circuit trip 40 minutes before the scheduled export shift. Resisting the urge to blindly reset the breaker, Sameer reviewed the fault annunciator and detected an overload on the secondary drive motor. He immediately isolated the sub-panel for safety and dispatched his technician to inspect the mechanical bearings for jamming while he tested line resistance with a multimeter. Identifying a blown thermal fuse caused by accumulated dust, Sameer had the assembly cleaned, installed a verified spare fuse, and ran an unloaded test run before authorizing full production on schedule.",
+      "blunder_story": "Rohan saw the machine stop. He got furious and started hitting the engine with a wrench. Miraculously, the machine started working and everyone cheered him as a genius.",
+      "olqs_projected": [
+        "Practical Intelligence",
+        "Problem Solving",
+        "Organising Ability",
+        "Initiative"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Conveyor line tripped prior to shift handover.",
+        "identify": "Thermal overload trip indicating mechanical jam or electrical short.",
+        "plan_initiate": "Isolated panel for safety; delegated bearing inspection.",
+        "coordinate": "Worked in tandem with technician; retrieved standardized spare fuse.",
+        "result": "Safe diagnostic repair completed; full export shift started on time."
+      }
     },
     {
       "id": "03",
       "title": "Resource Shortage",
-      "description": "A team discovers that an essential item is unavailable when work is about to begin.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "category": "Logistics & Operations",
+      "description": "A team discovers that an essential material, medical kit, fuel, or tool is unavailable when work is about to commence.",
+      "picture_cues": "Individuals in a storehouse, construction site, or office reviewing an empty shelf, inventory clipboard, or ledger.",
+      "best_fit_professions": [
+        {
+          "name": "Storekeeper / Inventory Manager",
+          "domain": "23. Logistics & Supply Chain",
+          "reason": "Conducts reconciliation and cross-allocates buffer stock from adjacent depots."
+        },
+        {
+          "name": "Construction Site Supervisor",
+          "domain": "24. Architecture & Construction",
+          "reason": "Re-sequences task phases so concrete setting continues while steel rebar is rerouted."
+        },
+        {
+          "name": "Camp Logistics Officer",
+          "domain": "02. Armed Forces",
+          "reason": "Prioritizes critical ration/fuel distribution and pools resources across units."
+        }
+      ],
+      "model_story": "Vikram, a 25-year-old junior project manager at a water pipeline project, discovered that the high-grade PVC sealant required for joint sealing was short by 30 drums on the morning of pipe laying. Recognizing that pausing work would stall thirty contract laborers, Vikram re-sequenced the work plan: he directed the excavation crew to continue trench bedding while he contacted the neighboring district depot to negotiate a loan of 35 verified sealant drums. Coordinating dispatch with a local pickup vehicle, Vikram received the supplies by noon, conducted batch quality verification, and ensured the pipe-jointing proceeded without wage loss or deadline disruption.",
+      "blunder_story": "Rohan found there were no supplies. He reported his lazy team to the police for theft, fired everybody on the spot, and went home in frustration.",
+      "olqs_projected": [
+        "Organising Ability",
+        "Adaptability",
+        "Cooperation",
+        "Practical Intelligence"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Shortage of 30 sealant drums on morning of pipe laying.",
+        "identify": "Stalling entire workforce leads to cascading deadline failure.",
+        "plan_initiate": "Re-sequenced excavation tasks; negotiated inter-depot loan.",
+        "coordinate": "Dispatched transport; liaised with neighbor depot supervisor.",
+        "result": "Zero downtime achieved; pipe jointing executed flawlessly."
+      }
     },
     {
       "id": "04",
       "title": "Weather Disruption",
-      "description": "Bad weather affects transport, communication or an outdoor activity.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "category": "Crisis & Emergency",
+      "description": "Unseasonal torrential rain, hail, severe fog, or extreme heat jeopardizes an outdoor transport, sports, or civic operation.",
+      "picture_cues": "Dark clouded sky, rain-swept background, people sheltering under temporary canopy or inspecting vehicles on muddy road.",
+      "best_fit_professions": [
+        {
+          "name": "Trekking Guide / Adventure Instructor",
+          "domain": "01. Fitness & Sports",
+          "reason": "Assesses route gradient, sets safe perimeter, and pauses ascent at base shelter."
+        },
+        {
+          "name": "Agriculture Extension Officer",
+          "domain": "11. Agriculture & Rural Development",
+          "reason": "Advises farmers on drainage canals to prevent standing water root rot."
+        },
+        {
+          "name": "Disaster Response Lead",
+          "domain": "21. Disaster Management",
+          "reason": "Coordinates sandbagging, clearing culverts, and establishing alternative communication."
+        }
+      ],
+      "model_story": "Karan, a 27-year-old outdoor expedition instructor leading a college mountaineering camp, noticed sudden heavy cloud accumulation and barometric pressure drops indicative of a flash thunderstorm. Instead of pushing for the peak, Karan immediately called a halt at the plateau meadow. He organized the group into buddy pairs, assigned senior students to pitch anchored dome tents in a leeward, elevated grove away from drainage gullies, and gathered all rain-sensitive communication gear in waterproof drybags. He verified headcount, served warm electrolyte soup, and maintained contact with the valley base station via VHF radio until the storm subsided safely three hours later.",
+      "blunder_story": "Rohan was climbing the mountain when a cyclone struck. Rohan refused to listen to anyone and forced his friends to climb to the summit in the lightning to prove their guts.",
+      "olqs_projected": [
+        "Initiative",
+        "Sense of Responsibility",
+        "Organising Ability",
+        "Self-Confidence"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Incoming severe storm on exposed mountain terrain.",
+        "identify": "Hypothermia and lightning strike risks if ascent continued.",
+        "plan_initiate": "Halted group; selected leeward elevated shelter site.",
+        "coordinate": "Instituted buddy system; maintained VHF contact with base station.",
+        "result": "Entire party kept safe, warm, and accounted for without distress."
+      }
     },
     {
       "id": "05",
       "title": "Lost Person",
-      "description": "A participant or child is separated from the group during an activity.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "category": "Crisis & Emergency",
+      "description": "A student, trekker, or vulnerable individual gets separated from the group during a crowded fair, field survey, or forest trail.",
+      "picture_cues": "A worried group looking into a trail, a leader pointing at a map or handheld radio, forest or crowded market backdrop.",
+      "best_fit_professions": [
+        {
+          "name": "Forest Beat Officer / Range Guard",
+          "domain": "20. Environment & Wildlife",
+          "reason": "Applies trail grid search, checks waterpoints, and alerts checkposts."
+        },
+        {
+          "name": "School Sports Coordinator",
+          "domain": "05. Education & Academia",
+          "reason": "Contains remaining students at assembly point while conducting systematic sweep."
+        },
+        {
+          "name": "Police Sub-Inspector",
+          "domain": "03. Police & Law Enforcement",
+          "reason": "Broadcasts description over control room, checks CCTV, and seals perimeter exits."
+        }
+      ],
+      "model_story": "Neha, a 24-year-old biology research scholar leading a field survey in a wildlife sanctuary, discovered during the mid-day headcount that a junior undergraduate had drifted away from the trail. Neha calmly kept the remaining six students at the designated forest rest house under the care of the local forest guard. Drawing a 1-kilometer grid map based on the student's last photograph timestamp, Neha and two experienced rangers searched along the trail's stream crossing using sound signals. Within 25 minutes, they located the student resting near a rock outcrop after losing the path. Neha checked him for dehydration, safely guided him back, and reinforced mandatory buddy guidelines.",
+      "blunder_story": "Rohan found a kid lost in the jungle. He suspected wild tigers had eaten the child, so he took a rifle, shot three tigers, and found the boy sleeping peacefully.",
+      "olqs_projected": [
+        "Practical Intelligence",
+        "Organising Ability",
+        "Sense of Responsibility",
+        "Determination"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Headcount showed one junior student missing on forest trail.",
+        "identify": "Risk of dehydration or wild encounters if search is delayed.",
+        "plan_initiate": "Secured main party; drafted grid map based on timestamp.",
+        "coordinate": "Formed search trio with local rangers; used whistle signals.",
+        "result": "Student recovered unharmed within 25 minutes; protocol updated."
+      }
     },
     {
       "id": "06",
       "title": "Conflicting Information",
-      "description": "Two sources provide different versions of an important event.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "category": "People & Leadership",
+      "description": "Two opposing reports or conflicting instructions arrive regarding an operational order, event venue, or project specification.",
+      "picture_cues": "Two people presenting competing papers or blueprints to an officer sitting across a desk with a thoughtful expression.",
+      "best_fit_professions": [
+        {
+          "name": "Sub-Divisional Magistrate (SDM)",
+          "domain": "04. Civil Services",
+          "reason": "Verifies ground records, summons both field inspectors, and executes physical inspection."
+        },
+        {
+          "name": "Quality Assurance Auditor",
+          "domain": "14. Corporate & Management",
+          "reason": "Checks raw test logs against calibration standards to settle specification variance."
+        },
+        {
+          "name": "Investigative Journalist",
+          "domain": "18. Media & Communication",
+          "reason": "Triangulates primary documentation before publishing public advisories."
+        }
+      ],
+      "model_story": "Ankit, a 26-year-old Assistant Municipal Engineer, received conflicting reports: the road contractor claimed asphalt paving was completed to 65mm thickness, while the community vigilance committee reported severe potholes and under-laying. Rather than taking sides, Ankit scheduled an on-site joint verification the following morning. In the presence of both the contractor and resident representatives, he conducted random core drilling samples across three sections of the road. Finding an average thickness of only 42mm, Ankit documented the shortfall in the official inspection book, issued a rectification notice to re-lay the top course at contractor cost, and restored community trust through transparent adherence to standards.",
+      "blunder_story": "Rohan got two different reports. He arrested both parties for lying to a government official and threw them in jail without verification.",
+      "olqs_projected": [
+        "Integrity",
+        "Practical Intelligence",
+        "Effective Communication",
+        "Cooperation"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Conflicting claims regarding completed road thickness.",
+        "identify": "Objective ground truth needed through calibrated measurement.",
+        "plan_initiate": "Organized joint on-site inspection with core-drilling.",
+        "coordinate": "Conducted measurement in presence of both parties.",
+        "result": "Transparent evidentiary proof obtained; contractor rectified road."
+      }
     },
     {
       "id": "07",
-      "title": "Team Delay",
-      "description": "A group is behind schedule because responsibilities were not clearly divided.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Team Delay & Disorganization",
+      "category": "People & Leadership",
+      "description": "A project or cultural fest team is lagging far behind schedule because tasks were vague and team members are overlapping and arguing.",
+      "picture_cues": "A group of young people looking weary around a table covered in half-finished posters, schedules, and disorganized materials.",
+      "best_fit_professions": [
+        {
+          "name": "Event Coordinator",
+          "domain": "16. Hospitality & Tourism",
+          "reason": "Re-charts milestone timeline, assigns clear single-point responsibilities."
+        },
+        {
+          "name": "Software Scrum Master / Team Lead",
+          "domain": "08. IT & Technology",
+          "reason": "Conducts quick daily standup, clears roadblocks, and implements sprint board."
+        },
+        {
+          "name": "College Cultural Secretary",
+          "domain": "05. Education & Academia",
+          "reason": "Reorganizes committee sub-teams and sets short-interval check-ins."
+        }
+      ],
+      "model_story": "Ritu, a final-year engineering student and coordinator for the annual national technical symposium, noticed that with just 48 hours to launch, neither the stage setup nor participant badges were complete. Calling a 10-minute huddle, Ritu listened to the members' confusion regarding overlapping roles. She quickly divided the whiteboard into four distinct pillars: Stage Logistics, Participant Registration, Hospitality, and Technical Sound. Assigning one reliable lead to each pillar with dedicated volunteer lists, she set 3-hour milestone check-ins. Working alongside the registration desk to boost morale, Ritu cleared the badge backlog by evening, enabling the stage team to finish lighting ahead of the inaugural ceremony.",
+      "blunder_story": "Rohan saw his team was slow. He shouted at them, called them worthless, did the entire festival work alone overnight without sleep, and collapsed.",
+      "olqs_projected": [
+        "Organising Ability",
+        "Initiative",
+        "Cooperation",
+        "Ability to Influence the Group"
+      ],
+      "action_logic_breakdown": {
+        "observe": "48 hours to event launch; chaos and overlapping tasks.",
+        "identify": "Lack of ownership and clear functional division of labor.",
+        "plan_initiate": "Created four functional pillars with assigned leads.",
+        "coordinate": "Set 3-hour milestone checkpoints; assisted bottleneck desk.",
+        "result": "All preparations synchronized and completed ahead of inaugurations."
+      }
     },
     {
       "id": "08",
-      "title": "Community Problem",
-      "description": "Residents face a local issue that requires coordination with several stakeholders.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Community Problem (Water / Sanitation)",
+      "category": "People & Leadership",
+      "description": "Villagers or colony residents face a drinking water shortage or broken drainage overflowing into common access paths.",
+      "picture_cues": "Residents gathered around a dry village borewell or water tanker, expressing concern to a local representative.",
+      "best_fit_professions": [
+        {
+          "name": "Block Development Officer (BDO)",
+          "domain": "04. Civil Services",
+          "reason": "Coordinates emergency tanker routes while releasing repair funds for motor pump."
+        },
+        {
+          "name": "Social Worker / Gram Sevak",
+          "domain": "22. Social Work",
+          "reason": "Organizes shramdaan clean-up and liaises with public health engineering department."
+        },
+        {
+          "name": "Public Health Engineer",
+          "domain": "07. Engineering",
+          "reason": "Isolates water contamination, conducts chlorination, and repairs pipeline breach."
+        }
+      ],
+      "model_story": "Aditya, a 25-year-old Gram Rozgar Sevak, was alerted by village elders that the primary submersible community pump had burnt out, leaving eighty families without drinking water during harvest week. Aditya immediately contacted the Jal Sansthan junior engineer to log an emergency repair requisition. Recognizing that technical replacement would take 24 hours, he coordinated with the nearby dairy plant to dispatch two food-grade water tankers for morning and evening distribution. Organising youth volunteers to manage orderly queues and prioritize elderly households, Aditya oversaw the pump replacement the following afternoon, ensuring safe, potable water was fully restored without conflict.",
+      "blunder_story": "Rohan saw the dry well. He started digging with his bare hands for 24 hours straight until water miraculously gushed out of the earth.",
+      "olqs_projected": [
+        "Initiative",
+        "Social Adaptability",
+        "Sense of Responsibility",
+        "Organising Ability"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Community pump burnt out; 80 families facing water shortage.",
+        "identify": "Immediate hydration need vs technical repair lead time.",
+        "plan_initiate": "Arranged temporary dairy tankers; logged formal repair order.",
+        "coordinate": "Youth volunteers managed orderly distribution for elderly.",
+        "result": "Safe water supplied continuously; new pump installed smoothly."
+      }
     },
     {
       "id": "09",
-      "title": "Academic Difficulty",
-      "description": "A student or group struggles with an important assignment or examination task.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Academic / Skill Difficulty",
+      "category": "People & Leadership",
+      "description": "A student, junior recruit, or team member struggles to master a complex syllabus module or technical qualification test.",
+      "picture_cues": "A candidate sitting at a study desk with head in hands, books open, mentor or colleague sitting beside with an encouraging posture.",
+      "best_fit_professions": [
+        {
+          "name": "High School Teacher / Lecturer",
+          "domain": "05. Education & Academia",
+          "reason": "Breaks complex mathematical concepts into visual analogies and graded practice."
+        },
+        {
+          "name": "Training Instructor",
+          "domain": "02. Armed Forces",
+          "reason": "Identifies biomechanical or procedural flaw and guides remedial repetitions."
+        },
+        {
+          "name": "Senior Software Mentor",
+          "domain": "08. IT & Technology",
+          "reason": "Pair-programs to explain debugging methodologies and code modularity."
+        }
+      ],
+      "model_story": "Manish, a third-year engineering student, noticed his roommate Nikhil struggling intensely with applied thermodynamics and withdrawing from group sessions due to low confidence. Taking initiative after dinner, Manish sat with Nikhil and reviewed his exam papers to diagnose the specific roadblock. Finding that Nikhil understood theory but stumbled on cycle boundary equations, Manish broke down the derivations into visual step diagrams. He organized an hour of daily joint problem-solving each evening, quizzing each other on practical applications. Through consistent positive reinforcement, Nikhil gained clarity, scored well on the semester midterms, and regained his enthusiasm.",
+      "blunder_story": "Rohan saw his friend failing. Rohan hacked into the university computer servers at midnight, changed his friend's marks to 100%, and got him an A grade.",
+      "olqs_projected": [
+        "Cooperation",
+        "Effective Communication",
+        "Sense of Responsibility",
+        "Practical Intelligence"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Roommate demoralized and struggling with thermodynamics.",
+        "identify": "Difficulty stems from mathematical formulation, not lack of interest.",
+        "plan_initiate": "Reviewed papers; established daily 1-hour structured practice.",
+        "coordinate": "Used visual diagrams and peer problem-solving sessions.",
+        "result": "Friend cleared midterm with high confidence; academic gap closed."
+      }
     },
     {
       "id": "10",
-      "title": "Workplace Safety",
-      "description": "A worker notices a hazard that could affect people or equipment.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Workplace Safety Hazard",
+      "category": "Crisis & Emergency",
+      "description": "A worker spots an unguarded transmission belt, gas odor, faulty scaffolding clamp, or electrical spark on an active floor.",
+      "picture_cues": "Industrial worker pointing out a loose cable or pipe joint to the shift manager with protective helmets visible.",
+      "best_fit_professions": [
+        {
+          "name": "Industrial Safety Officer",
+          "domain": "07. Engineering",
+          "reason": "Executes lockout/tagout (LOTO), evacuates immediate perimeter, and repairs clamp."
+        },
+        {
+          "name": "Workshop Foreman",
+          "domain": "10. Skilled Trades",
+          "reason": "Halts lathe operation, tests earth leakage, and replaces cracked guard."
+        },
+        {
+          "name": "Chemical Plant Operator",
+          "domain": "09. Science & Research",
+          "reason": "Checks scrubbers, turns isolation valves, and sounds localized cautionary alarm."
+        }
+      ],
+      "model_story": "Rajesh, a 28-year-old safety engineer at a fabrication yard, observed that wind gusts were destabilizing a three-tier steel scaffolding unit during evening beam welding. Recognizing the imminent tipping danger to six welders aloft, Rajesh immediately blew his safety whistle and instructed the supervisor to halt welding and safely lower all personnel. He cordoned off the 10-meter drop zone with hazard tape, inspected the base jacks, and found that ground settling had loosened two anchoring tie-clamps. Directing the rigging crew to install diagonal bracing and secure ground anchor pins, Rajesh re-tested load rigidity before signing off on work resumption.",
+      "blunder_story": "Rohan saw the scaffolding collapsing. He ran underneath the falling iron pipes and held up the 50-ton structure on his shoulders until everyone walked away safely.",
+      "olqs_projected": [
+        "Initiative",
+        "Practical Intelligence",
+        "Sense of Responsibility",
+        "Courage"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Scaffolding vibrating and leaning under high wind gusts.",
+        "identify": "High-consequence structural collapse hazard to overhead welders.",
+        "plan_initiate": "Blew safety whistle; ordered immediate controlled evacuation.",
+        "coordinate": "Cordoned drop zone; directed rigging crew to re-brace foundation.",
+        "result": "Scaffolding stabilized and certified; zero injuries or structural damage."
+      }
     },
     {
       "id": "11",
-      "title": "Supply Delay",
-      "description": "A shipment or essential material is delayed and may affect operations.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Supply Chain / Material Delay",
+      "category": "Logistics & Operations",
+      "description": "An inter-state logistics truck carrying critical components is halted by a landslide, axle breakdown, or toll bottleneck.",
+      "picture_cues": "Logistics manager on phone examining transport route map on computer screen alongside shipping documentation.",
+      "best_fit_professions": [
+        {
+          "name": "Supply Chain Dispatcher",
+          "domain": "23. Logistics & Supply Chain",
+          "reason": "Re-routes shipment via alternate highway and coordinates priority clearance."
+        },
+        {
+          "name": "Fleet Operations Manager",
+          "domain": "17. Transport & Aviation",
+          "reason": "Dispatches secondary recovery vehicle to transfer cargo without detention."
+        },
+        {
+          "name": "Pharmaceutical Distribution Lead",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Monitors cold-chain temperature logs and arranges dry-ice recharge."
+        }
+      ],
+      "model_story": "Deepak, a logistics coordinator for a solar installation company, learned that a consignment of 120 inverter units was stranded 80 kilometers from the installation site due to an axle failure on the carrier trailer. With the project commissioning deadline scheduled in 36 hours, Deepak contacted the transport partner's regional hub to dispatch a replacement flatbed with a mobile crane. He notified the site assembly team to advance cable tray preparations and inverter stand mountings while cargo was in transit. Meeting the relief truck at the highway transfer point, Deepak supervised the crane transfer, verified shipment intactness, and ensured arrival on-site by midnight.",
+      "blunder_story": "Rohan found the truck broken. He pushed the 20-ton truck with his own hands all 80 kilometers down the highway in two hours.",
+      "olqs_projected": [
+        "Practical Intelligence",
+        "Initiative",
+        "Organising Ability",
+        "Determination"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Key inverter shipment stranded due to truck mechanical failure.",
+        "identify": "Risk of missing critical 36-hour grid commissioning timeline.",
+        "plan_initiate": "Dispatched relief flatbed and mobile crane for cargo transfer.",
+        "coordinate": "Re-sequenced site civil work; personally supervised highway transfer.",
+        "result": "Components delivered safely with zero delay to grid synchronization."
+      }
     },
     {
       "id": "12",
-      "title": "Public Event",
-      "description": "An event develops an unexpected crowd-management or logistics issue.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Public Event Crowd Surge",
+      "category": "Crisis & Emergency",
+      "description": "A sudden influx of attendees at an open-air stadium, fair, or convention creates localized congestion at exit barricades.",
+      "picture_cues": "Large crowd moving through gates, security personnel communicating on walkie-talkies, barricades being held steady.",
+      "best_fit_professions": [
+        {
+          "name": "Assistant Commissioner of Police (ACP)",
+          "domain": "03. Police & Law Enforcement",
+          "reason": "Opens reserve gates, directs one-way dispersal, and uses public address calm."
+        },
+        {
+          "name": "Event Operations Director",
+          "domain": "16. Hospitality & Tourism",
+          "reason": "Deploys marshals to widen funnels and redirects foot traffic to secondary lawns."
+        },
+        {
+          "name": "Civil Defense Volunteer Captain",
+          "domain": "21. Disaster Management",
+          "reason": "Forms human chain to protect women and children while guiding crowd flow."
+        }
+      ],
+      "model_story": "Saurabh, a 26-year-old Sub-Inspector on security duty at an annual trade exposition, observed a bottleneck forming at the eastern pedestrian exit following the closing fireworks. Sensing increasing pressure against the steel barricades, Saurabh took the public address megaphone and announced in a calm, firm tone that additional western gates were being opened with direct shuttle connectivity. Coordinating swiftly via radio with his perimeter staff, he had reserve gates 4 and 5 unlocked immediately. Stationing constables to form an orderly chevron guide line, Saurabh dispersed the congestion within ten minutes without any stampede or panic.",
+      "blunder_story": "Rohan saw the crowd pushing. He pulled out his pistol, fired five shots into the air, and lathi-charged the women and children to teach them discipline.",
+      "olqs_projected": [
+        "Effective Communication",
+        "Initiative",
+        "Self-Confidence",
+        "Practical Intelligence"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Crowd surge bottlenecking at eastern exit gates.",
+        "identify": "Crush and stampede hazard if pressure is not vented immediately.",
+        "plan_initiate": "Used PA system to reassure crowd; ordered opening of reserve exits.",
+        "coordinate": "Radioed perimeter teams to form guidance funnels to western gates.",
+        "result": "Crowd evacuated smoothly and safely without a single casualty."
+      }
     },
     {
       "id": "13",
-      "title": "Environmental Issue",
-      "description": "A field team notices pollution, habitat damage or another environmental concern.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Environmental Hazard (Chemical / Waste)",
+      "category": "Technical & Engineering",
+      "description": "An unexpected sludge leak or agricultural chemical discharge threatens a local irrigation canal or grazing boundary.",
+      "picture_cues": "Environmental inspectors or villagers looking at discoloration in a stream or pond, taking liquid samples in glass bottles.",
+      "best_fit_professions": [
+        {
+          "name": "Environmental Engineer",
+          "domain": "20. Environment & Wildlife",
+          "reason": "Samples pH/contaminant levels, implements earthen bunding, and neutralizes spill."
+        },
+        {
+          "name": "Pollution Control Board Inspector",
+          "domain": "04. Civil Services",
+          "reason": "Traces pipeline source, seals discharge outlet, and enforces corrective remediation."
+        },
+        {
+          "name": "Veterinary Medical Officer",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Treats affected cattle and cordons contaminated watering holes."
+        }
+      ],
+      "model_story": "Pooja, an environmental scientific officer with the state pollution board, received an alert regarding unusual frothing and discoloration in a village irrigation canal near an industrial cluster. Arriving promptly with her field kit, Pooja took pH and dissolved oxygen readings, confirming toxic alkaline effluent. She immediately notified the irrigation department to close the downstream weir gates, preventing the runoff from reaching paddy fields. Walking the canal upstream, she traced the discharge to an unsealed retention valve of a textile dyeing unit. Pooja had the valve clamped under official notice, instructed the factory to deploy neutralizing slurry, and verified clean water samples before re-opening the sluice.",
+      "blunder_story": "Rohan saw the polluted river. He drank the chemical water to prove it was harmless, but then got superpowers.",
+      "olqs_projected": [
+        "Initiative",
+        "Practical Intelligence",
+        "Sense of Responsibility",
+        "Determination"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Discolored, frothing water in vital village irrigation canal.",
+        "identify": "Imminent threat of toxic damage to downstream standing crops.",
+        "plan_initiate": "Took test samples; ordered immediate closure of downstream weir.",
+        "coordinate": "Traced source upstream to dyeing unit; supervised valve sealing.",
+        "result": "Agricultural fields protected; factory complied with remediation."
+      }
     },
     {
       "id": "14",
-      "title": "Financial Discrepancy",
-      "description": "A discrepancy is found in records before a transaction is completed.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Financial / Ledger Discrepancy",
+      "category": "Logistics & Operations",
+      "description": "An internal audit or inventory reconciliation uncovers an unexplained debit balance or missing cash voucher prior to year-end closing.",
+      "picture_cues": "Accountant or bank manager looking intently at multiple account sheets, calculators, and audit reports late in the evening.",
+      "best_fit_professions": [
+        {
+          "name": "Chartered Accountant / Internal Auditor",
+          "domain": "13. Finance & Banking",
+          "reason": "Cross-checks bank reconciliation statements and matches invoice timestamps."
+        },
+        {
+          "name": "Treasury Officer",
+          "domain": "04. Civil Services",
+          "reason": "Reconciles departmental disbursement vouchers against treasury passbook."
+        },
+        {
+          "name": "Commercial Branch Manager",
+          "domain": "13. Finance & Banking",
+          "reason": "Audits day-end cash vault balances and isolates clerical posting errors."
+        }
+      ],
+      "model_story": "Varun, a 27-year-old assistant audit officer at a regional cooperative bank, discovered a five-lakh rupee mismatch between the central ledger and daily branch cash vouchers during quarterly closing. Remaining calm, Varun refrained from making premature accusations. He initiated a systematic cross-audit, comparing the automated electronic transaction logs against manual cashier day-slips. Within two hours, he identified that a bulk agricultural loan disbursal had been posted twice under an accidental duplicate reference code during a server lag. Varun had the reversal entry posted with senior manager authorization, verified that cash tallies balanced to the rupee, and recommended a dual-auth prompt on the banking software.",
+      "blunder_story": "Rohan found money missing. He suspected the cashier, took out handcuffs, tortured the cashier until he confessed, and became hero of the branch.",
+      "olqs_projected": [
+        "Integrity",
+        "Practical Intelligence",
+        "Attention to Detail",
+        "Organising Ability"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Unexplained mismatch between central ledger and cash records.",
+        "identify": "Distinguish between fraudulent diversion and system posting glitch.",
+        "plan_initiate": "Cross-referenced manual receipts against electronic core logs.",
+        "coordinate": "Liaised with branch manager to authorize reversal entry.",
+        "result": "Complete financial balance restored; duplicate validation rule installed."
+      }
     },
     {
       "id": "15",
-      "title": "Customer Complaint",
-      "description": "A customer reports a problem during a busy service period.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Customer / Public Service Grievance",
+      "category": "People & Leadership",
+      "description": "An agitated group of citizens or consumers gathers at a public counter complaining about delayed ration cards, power outages, or canceled bookings.",
+      "picture_cues": "Citizens arguing at a public service counter, an officer stepping forward from inner cabin with open palms and attentive posture.",
+      "best_fit_professions": [
+        {
+          "name": "Tehsildar / Administrative Magistrate",
+          "domain": "04. Civil Services",
+          "reason": "Listens calmly, audits distribution roster, and resolves pending issuance on the spot."
+        },
+        {
+          "name": "Electricity Board Assistant Engineer",
+          "domain": "07. Engineering",
+          "reason": "Explains transformer maintenance status and offers expected power restoration hour."
+        },
+        {
+          "name": "Customer Relationship Head",
+          "domain": "16. Hospitality & Tourism",
+          "reason": "De-escalates tension, arranges seating, and processes priority alternate bookings."
+        }
+      ],
+      "model_story": "Praveen, a 26-year-old Tehsildar, noticed a heated argument developing at the taluk public services counter, where thirty farmers were frustrated over delays in drought relief compensation disbursement. Praveen stepped out of his office, invited three senior representatives into the conference room, and listened patiently to their grievances. Inspecting the processing terminal, he discovered that a recent portal update had flagged bank IFSC codes as invalid. Praveen immediately mobilized three data entry operators to manually verify IFSC codes from original passbook photocopies. By afternoon, the first batch of verified payments was authorized, and Praveen established a daily grievance desk to resolve all remaining claims transparently.",
+      "blunder_story": "Rohan saw the angry mob. He hid inside the bathroom until evening, called a SWAT team, and had the protestors tear-gassed.",
+      "olqs_projected": [
+        "Effective Communication",
+        "Social Adaptability",
+        "Initiative",
+        "Sense of Responsibility"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Agitated farmers at public counter due to delayed compensation.",
+        "identify": "Public frustration fueled by lack of explanation and technical glitch.",
+        "plan_initiate": "Invited farmer representatives for calm discussion; checked server log.",
+        "coordinate": "Deployed data operators to manually verify invalid IFSC entries.",
+        "result": "Disbursements approved same day; public harmony and trust restored."
+      }
     },
     {
       "id": "16",
-      "title": "Cyber Incident",
-      "description": "A system shows unusual activity shortly before a planned operation.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Cyber Security Incident",
+      "category": "Technical & Engineering",
+      "description": "An institution's internal network suffers ransomware activity, unauthorized data exfiltration, or DDoS downtime right before online admissions or bidding.",
+      "picture_cues": "IT technicians gathered around computer screens showing alert logs, cables in network rack, serious analytical focus.",
+      "best_fit_professions": [
+        {
+          "name": "Cyber Security Analyst",
+          "domain": "08. IT & Technology",
+          "reason": "Isolates infected subnet, captures memory dump, and restores from air-gapped backups."
+        },
+        {
+          "name": "Network Operations Center Lead",
+          "domain": "08. IT & Technology",
+          "reason": "Reroutes traffic via cloud scrubber to mitigate distributed volumetric attack."
+        },
+        {
+          "name": "IT Director",
+          "domain": "14. Corporate & Management",
+          "reason": "Initiates incident response protocol, informs legal, and manages service continuity."
+        }
+      ],
+      "model_story": "Tanvi, a 25-year-old information security engineer at a state university, observed an abnormal outbound traffic spike on the admissions database server three hours before entrance results were to be published. Suspecting an automated SQL injection attempt, Tanvi immediately severed the server's public gateway to contain any breach. Analyzing traffic packets, she identified the malicious IP range and blocked it at the border firewall. Working with her database administrator, she validated data table hashes against the previous night's verified offline backup, confirmed no records were compromised, and reinforced the input query sanitation before restoring public access with enhanced CAPTCHA protection on time.",
+      "blunder_story": "Rohan saw a hacker message on the screen. He hacked back into the hacker's computer, destroyed the hacker's computer with a cyber-bomb, and saved the internet.",
+      "olqs_projected": [
+        "Practical Intelligence",
+        "Problem Solving",
+        "Sense of Responsibility",
+        "Organising Ability"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Unusual outbound network traffic spike prior to major result release.",
+        "identify": "Potential database exfiltration requiring containment before investigation.",
+        "plan_initiate": "Isolated public gateway; analyzed malicious IP vectors.",
+        "coordinate": "Audited cryptographic hashes against offline backup with DBA.",
+        "result": "Zero data leaked; input sanitization upgraded; portal launched safely."
+      }
     },
     {
       "id": "17",
-      "title": "Construction Constraint",
-      "description": "A site condition conflicts with the original project plan.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Construction / Geological Constraint",
+      "category": "Technical & Engineering",
+      "description": "Excavation for a school, hospital, or flyover reveals an unexpected high water table, underground utility pipe, or loose sandy strata.",
+      "picture_cues": "Civil engineers in hard hats examining water accumulating in an excavation trench with survey tripod nearby.",
+      "best_fit_professions": [
+        {
+          "name": "Civil Project Engineer",
+          "domain": "24. Architecture & Construction",
+          "reason": "Installs dewatering pumps, modifies pile foundation depth, and reroutes drainage."
+        },
+        {
+          "name": "Geotechnical Consultant",
+          "domain": "07. Engineering",
+          "reason": "Takes soil core samples and calculates revised safe bearing capacity."
+        },
+        {
+          "name": "Municipal Utilities Inspector",
+          "domain": "04. Civil Services",
+          "reason": "Locates underground gas/water lines and issues safe diversion blueprint."
+        }
+      ],
+      "model_story": "Arjun, a 28-year-old civil construction engineer overseeing a community primary health center foundation, found that excavation struck an unmapped underground water seepage pocket at 3 meters depth. With trench walls sloughing, Arjun halted digging and instructed the earthmover operator to pull back to stable ground. Consulting the district geological survey report, Arjun designed an immediate dewatering strategy: he deployed two diesel submersible pumps to lower the water head into an adjacent retention pit while ordering perforated gravel trenches along the perimeter. Once stabilized, he revised the foundation design to short friction piles approved by the structural architect, keeping the clinic build secure and on track.",
+      "blunder_story": "Rohan saw the water leaking into the pit. He jumped in and plugged the underground spring with his boots and held it for 12 hours.",
+      "olqs_projected": [
+        "Practical Intelligence",
+        "Adaptability",
+        "Sense of Responsibility",
+        "Initiative"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Unmapped groundwater seepage causing trench wall instability.",
+        "identify": "Risk of structural settlement and excavation collapse.",
+        "plan_initiate": "Halted excavator; deployed diesel dewatering pumps.",
+        "coordinate": "Consulted geotechnical records; liaised with structural architect.",
+        "result": "Gravel drainage and friction piles installed; building foundation secured."
+      }
     },
     {
       "id": "18",
-      "title": "Emergency Evacuation",
-      "description": "An alarm requires people to move to a safe location quickly and orderly.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Emergency Evacuation Alert",
+      "category": "Crisis & Emergency",
+      "description": "A fire alarm, gas leak indicator, or structural siren sounds in a multi-story hospital, university, or corporate facility.",
+      "picture_cues": "Corridor filled with light smoke or alarm strobe flashing, floor warden guiding people towards emergency fire stairs.",
+      "best_fit_professions": [
+        {
+          "name": "Fire Safety Warden",
+          "domain": "21. Disaster Management",
+          "reason": "Checks stairwell pressurization, prevents elevator use, and accounts for all rooms."
+        },
+        {
+          "name": "Hospital Nursing Superintendent",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Prioritizes non-ambulatory patient evacuation using wheelbeds and oxygen bottles."
+        },
+        {
+          "name": "Factory Production Manager",
+          "domain": "14. Corporate & Management",
+          "reason": "Initiates plant shutdown, leads employees to assembly point, and conducts roll call."
+        }
+      ],
+      "model_story": "Naveen, a 26-year-old safety marshal in a five-story technical institute, heard the secondary smoke alarm sound on the third floor physics wing. Grabbing his emergency radio and flashlight, Naveen rushed to the floor and identified an electrical smolder in an air handling room. Confirming light smoke entering the hallway, he activated the floor evacuation horn, instructed students to stay calm, and strictly directed them away from the elevators toward the dual external fire staircases. Naveen conducted a sweep of all classrooms and restrooms to ensure no student was left behind, helped an injured student down the stairs, and reported zero missing persons to the arriving fire brigade at the designated assembly ground.",
+      "blunder_story": "Rohan heard the fire alarm. He took a fire extinguisher, swallowed the smoke, leaped through the flames, and jumped out of the 5th floor window with two people in his arms.",
+      "olqs_projected": [
+        "Courage",
+        "Sense of Responsibility",
+        "Effective Communication",
+        "Organising Ability"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Smoke alarm sounding; smoke entering physics corridor.",
+        "identify": "Risk of stampede and smoke inhalation in multi-story building.",
+        "plan_initiate": "Directed students through external fire stairs; blocked elevators.",
+        "coordinate": "Swept all rooms; guided incapacitated student; briefed fire chief.",
+        "result": "Entire floor evacuated in under 4 minutes; fire contained safely."
+      }
     },
     {
       "id": "19",
-      "title": "Equipment Maintenance",
-      "description": "Routine inspection reveals a fault that should be addressed before use.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Equipment Preventive Fault",
+      "category": "Technical & Engineering",
+      "description": "A routine pre-shift checklist on an aircraft engine, turbine, agricultural tractor, or medical MRI reveals hairline fatigue or pressure drops.",
+      "picture_cues": "Mechanic or aircraft engineer with torch and inspection mirror examining turbine blades or hydraulic landing gear.",
+      "best_fit_professions": [
+        {
+          "name": "Aeronautical Maintenance Engineer (AME)",
+          "domain": "17. Transport & Aviation",
+          "reason": "Grounds craft, tags non-serviceable component, and executes ultrasonic NDT inspection."
+        },
+        {
+          "name": "Locomotive Inspector",
+          "domain": "17. Transport & Aviation",
+          "reason": "Inspects brake pressure hoses and bogie coil springs before rail departure."
+        },
+        {
+          "name": "Hospital Biomedical Engineer",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Recalibrates radiation emitter on CT scanner before patient intake."
+        }
+      ],
+      "model_story": "Kunal, a 27-year-old aircraft maintenance engineer inspecting a regional passenger aircraft prior to morning boarding, noticed micro-pitting along the hydraulic return line of the starboard landing gear. While the warning sensor in the cockpit showed green, Kunal trusted his visual inspection and conducted a non-destructive dye-penetrant test. The test confirmed a hairline stress fracture that could have ruptured under landing impact pressure. Kunal immediately flagged the aircraft as ground-held, alerted flight dispatch to assign an alternate aircraft to prevent passenger delay, and coordinated with his hangar crew to replace the hydraulic assembly, ensuring zero compromise on aviation safety.",
+      "blunder_story": "Rohan saw the crack in the airplane engine. He flew the plane anyway and held the cracked engine together with his hand during supersonic flight.",
+      "olqs_projected": [
+        "Sense of Responsibility",
+        "Practical Intelligence",
+        "Attention to Detail",
+        "Integrity"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Visual pitting on hydraulic landing gear return line.",
+        "identify": "Latent crack risk which electronic sensors failed to flag.",
+        "plan_initiate": "Conducted dye-penetrant NDT; grounded craft for flight safety.",
+        "coordinate": "Notified dispatch for backup aircraft; replaced hydraulic line.",
+        "result": "Zero passenger delay; catastrophic in-flight hydraulic loss prevented."
+      }
     },
     {
       "id": "20",
-      "title": "Research Anomaly",
-      "description": "A result differs from the expected outcome and needs verification.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Scientific Research Anomaly",
+      "category": "Technical & Engineering",
+      "description": "An experimental trial, soil lab analysis, or clinical culture test yields data conflicting completely with theoretical expectations.",
+      "picture_cues": "Two researchers in white lab coats scrutinizing graph readouts and test tubes under fluorescent lighting.",
+      "best_fit_professions": [
+        {
+          "name": "Research Scientist",
+          "domain": "09. Science & Research",
+          "reason": "Re-calibrates spectrophotometer, prepares control blanks, and isolates contamination."
+        },
+        {
+          "name": "Pathologist",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Runs duplicate sample titration to rule out reagent expiry before declaring diagnostic results."
+        },
+        {
+          "name": "Agricultural Soil Chemist",
+          "domain": "11. Agriculture & Rural Development",
+          "reason": "Samples subsoil horizons to explain abnormal nitrogen-phosphorus spikes."
+        }
+      ],
+      "model_story": "Devika, a 26-year-old research chemist developing drought-resistant seed coatings, found that the third trial batch showed a 40% drop in germination speed compared to controls. Resisting the impulse to discard the batch or fudge the graph, Devika initiated an audit of all experimental variables. She recalibrated the environmental growth chamber's humidity sensors and discovered that the chamber's water filtration cartridge had expired, allowing mineral calcification on the germination trays. Devika replaced the filters, ran a standardized control batch alongside the trial, and confirmed that seed vigor restored to optimal targets, documenting the recalibration protocol in the lab registry.",
+      "blunder_story": "Rohan saw the experiment failed. He poured all chemicals together, created an explosion, and synthesized the cure for all diseases known to mankind.",
+      "olqs_projected": [
+        "Integrity",
+        "Practical Intelligence",
+        "Problem Solving",
+        "Perseverance"
+      ],
+      "action_logic_breakdown": {
+        "observe": "40% drop in germination rate in third seed coating trial batch.",
+        "identify": "Determine whether flaw is in chemical formulation or environmental chamber.",
+        "plan_initiate": "Audited growth chamber sensors; found expired filtration cartridge.",
+        "coordinate": "Replaced filters; ran paired control and trial batches.",
+        "result": "Accurate experimental repeatability achieved; lab protocol improved."
+      }
     },
     {
       "id": "21",
-      "title": "Transport Disruption",
-      "description": "A scheduled movement is interrupted by a route or vehicle problem.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Public Transport Disruption",
+      "category": "Logistics & Operations",
+      "description": "A scheduled passenger train, bus fleet, or ferry is halted mid-route by a track fracture, diesel line block, or water hyacinth choke.",
+      "picture_cues": "Station master or bus depot supervisor holding clipboard, talking to bus drivers and stranded passengers on platform.",
+      "best_fit_professions": [
+        {
+          "name": "Station Superintendent",
+          "domain": "17. Transport & Aviation",
+          "reason": "Arranges bus shuttles, provides clean drinking water, and coordinates track repair."
+        },
+        {
+          "name": "Road Transport Depot Manager",
+          "domain": "17. Transport & Aviation",
+          "reason": "Deploys spare buses and re-routes line via bypass highway."
+        },
+        {
+          "name": "Civil Police Inspector",
+          "domain": "03. Police & Law Enforcement",
+          "reason": "Regulates passenger crowd and prevents highway blockades."
+        }
+      ],
+      "model_story": "Sanjay, a 28-year-old railway assistant station master, was alerted that a freight wagon axle derailment had blocked the twin up-line 5 kilometers ahead of his station, stranding an incoming express train with 800 passengers. Sanjay immediately updated the platform arrival boards and made clear public announcements explaining the delay to prevent rumors. He coordinated with the municipal transport corporation to arrange ten state buses at the station porch to transfer passengers destined for the airport and city center. Meanwhile, he opened the station water booths, distributed refreshments from the pantry cars, and dispatched the emergency relief train with the engineering gang to re-rail the freight car by noon.",
+      "blunder_story": "Rohan saw the derailed train. He tied the train to his motorcycle, pulled all 20 carriages along the tracks, and reached the terminal on time.",
+      "olqs_projected": [
+        "Initiative",
+        "Effective Communication",
+        "Organising Ability",
+        "Social Adaptability"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Freight derailment blocking rail corridor with passenger train stranded.",
+        "identify": "Passenger anxiety and missed airport connections require instant logistical relief.",
+        "plan_initiate": "Public transparency via PA; arranged 10 municipal relief buses.",
+        "coordinate": "Dispatched railway breakdown crane; opened passenger water kiosks.",
+        "result": "Passengers evacuated smoothly; track cleared and traffic resumed."
+      }
     },
     {
       "id": "22",
-      "title": "Leadership Gap",
-      "description": "The person coordinating a task becomes unavailable shortly before execution.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Leadership Gap in Crisis",
+      "category": "People & Leadership",
+      "description": "The senior manager, expedition leader, or incident commander suddenly falls sick, gets injured, or becomes unavailable just before a critical operation.",
+      "picture_cues": "A team looking confused around an empty head chair in a command tent or meeting room with operational maps on the table.",
+      "best_fit_professions": [
+        {
+          "name": "Second-in-Command (2IC) / Project Deputy",
+          "domain": "02. Armed Forces",
+          "reason": "Steps forward, briefs team on pre-agreed contingency plan, and assumes operational command."
+        },
+        {
+          "name": "Senior Resident Doctor",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Takes charge of ICU triage while the department head is in emergency surgery."
+        },
+        {
+          "name": "Assistant Operations Manager",
+          "domain": "14. Corporate & Management",
+          "reason": "Executes standard operating procedure and delegates functional leads."
+        }
+      ],
+      "model_story": "Rohan, a 25-year-old senior surveyor on an irrigation reservoir project, was preparing for an inspection by the state water board when the Chief Engineer suffered acute food poisoning and was rushed to the clinic. Noticing the four survey crews growing indecisive, Rohan stepped forward to fill the gap. He assembled the team, reviewed the day's primary objective—presenting the catchment runoff contours—and assigned each surveyor their specific sector briefing role. Drawing upon his thorough knowledge of the field data, Rohan calmly delivered the executive presentation to the visiting commissioners, answered technical hydrology questions, and submitted the project file successfully.",
+      "blunder_story": "Rohan saw his boss faint. He declared himself the King of the company, threw the boss out of the window, and gave everyone a 1000% raise.",
+      "olqs_projected": [
+        "Initiative",
+        "Self-Confidence",
+        "Organising Ability",
+        "Effective Communication"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Chief engineer incapacitated prior to high-stakes board inspection.",
+        "identify": "Vacuum in leadership threatening project approval and team confidence.",
+        "plan_initiate": "Stepped forward calmly; aligned team on contour briefing roles.",
+        "coordinate": "Assigned sector questions; presented complete hydrology data.",
+        "result": "Inspection completed with commendation; continuity maintained."
+      }
     },
     {
       "id": "23",
-      "title": "Volunteer Mobilisation",
-      "description": "A community activity needs additional people and resources at short notice.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Volunteer Mobilisation (Short Notice)",
+      "category": "People & Leadership",
+      "description": "A sudden river surge, vaccination drive, or tree plantation campaign needs 50 additional helpers and logistics within two hours.",
+      "picture_cues": "Youth organizer speaking to college students in an auditorium or sports ground, pointing towards relief trucks and supplies.",
+      "best_fit_professions": [
+        {
+          "name": "NSS / NCC Officer",
+          "domain": "05. Education & Academia",
+          "reason": "Rallies student volunteers, forms functional squads, and organizes relief packing."
+        },
+        {
+          "name": "Community Social Worker",
+          "domain": "22. Social Work",
+          "reason": "Liaises with youth clubs and allocates neighborhood door-to-door teams."
+        },
+        {
+          "name": "Disaster Relief Coordinator",
+          "domain": "21. Disaster Management",
+          "reason": "Sets assembly lines for ration packing, first aid distribution, and dispatch."
+        }
+      ],
+      "model_story": "Harsh, a 23-year-old NCC cadet captain, received word that flash rain had waterlogged a slum settlement near the riverbank, requiring urgent mobilization of food packets and dry clothes. Harsh immediately went to the college sports ground and assembled sixty student volunteers. Within fifteen minutes, he divided them into three organized squads: Collection, Sorting & Waterproof Packing, and Transport Loading. Setting up an assembly line in the indoor gym, the teams sorted donated dry rations, packaged 400 clean food parcels into polythene liners, and loaded them onto municipality trucks, delivering relief to affected families before nightfall.",
+      "blunder_story": "Rohan went alone and carried 500 bags of rice on his teeth, swam across the raging river, and fed all the poor people by himself.",
+      "olqs_projected": [
+        "Organising Ability",
+        "Initiative",
+        "Ability to Influence the Group",
+        "Cooperation"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Sudden flood in riverside settlement requires urgent dry food parcels.",
+        "identify": "Need to harness student volunteer power into structured assembly lines.",
+        "plan_initiate": "Mobilized 60 volunteers; created 3 functional task squads.",
+        "coordinate": "Set up indoor packaging line; liaised with municipal transport.",
+        "result": "400 waterproof relief packets packaged and delivered before dark."
+      }
     },
     {
       "id": "24",
-      "title": "Service Access",
-      "description": "A vulnerable person is unable to access an essential service.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Service Access for Vulnerable Person",
+      "category": "People & Leadership",
+      "description": "An elderly person, person with disability, or illiterate citizen cannot access pension, medical schemes, or digital ration entitlements.",
+      "picture_cues": "An elderly villager looking distressed with worn papers at a digital kiosk or hospital registration desk, an officer listening attentively.",
+      "best_fit_professions": [
+        {
+          "name": "District Social Welfare Officer",
+          "domain": "22. Social Work",
+          "reason": "Assists with biometric waiver, validates Aadhaar manually, and disburses pension."
+        },
+        {
+          "name": "Hospital Medical Social Worker",
+          "domain": "06. Medical & Healthcare",
+          "reason": "Guides patient through Ayushman Bharat enrollment and fast-tracks diagnostics."
+        },
+        {
+          "name": "Rural Bank Mitra / Banking Correspondent",
+          "domain": "13. Finance & Banking",
+          "reason": "Executes doorstep micro-ATM cash delivery and updates passbook records."
+        }
+      ],
+      "model_story": "Simran, a 24-year-old medical social worker at a district civil hospital, noticed an elderly grandmother accompanied by her visually impaired grandson weeping near the surgical registration desk because their online token had expired. Simran walked up, offered them water, and reviewed their medical referral slips. Learning that the child required urgent cataract correction under the government health scheme, Simran escorted them to the Ayushman Bharat verification cell. She coordinated with the scheme coordinator to execute a manual biometric override, completed the enrollment paperwork within twenty minutes, and guided them directly to the ophthalmic pre-op ward for same-day evaluation.",
+      "blunder_story": "Rohan saw the poor woman crying. Rohan personally donated 10 crores of his own money, bought the hospital, and fired all the doctors.",
+      "olqs_projected": [
+        "Social Adaptability",
+        "Sense of Responsibility",
+        "Initiative",
+        "Cooperation"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Elderly grandmother and blind grandson stranded at digital token desk.",
+        "identify": "Technical barrier preventing urgent surgical healthcare access.",
+        "plan_initiate": "Escorted family; verified medical scheme eligibility manually.",
+        "coordinate": "Liaised with hospital Ayushman coordinator for biometric override.",
+        "result": "Child admitted to surgical ward same morning; financial coverage ensured."
+      }
     },
     {
       "id": "25",
-      "title": "Last-Minute Change",
-      "description": "A client or supervisor changes an important requirement shortly before delivery.",
-      "practice_flow": "Identify the immediate problem -> choose the first action -> involve the right people -> complete the task -> show a realistic result."
+      "title": "Last-Minute Specification Change",
+      "category": "Logistics & Operations",
+      "description": "A client, commanding officer, or city council abruptly updates a major requirement, blueprint dimension, or delivery schedule hours before release.",
+      "picture_cues": "A project manager standing with team members around a large presentation plan or drawing board with red revision notes.",
+      "best_fit_professions": [
+        {
+          "name": "Architect / Urban Designer",
+          "domain": "24. Architecture & Construction",
+          "reason": "Re-allocates room zoning without disturbing structural columns and updates CAD drawings."
+        },
+        {
+          "name": "Senior Software Architect",
+          "domain": "08. IT & Technology",
+          "reason": "Modifies API response payload and deploys hotfix with automated regression tests."
+        },
+        {
+          "name": "Creative Director",
+          "domain": "19. Creative & Design",
+          "reason": "Re-renders campaign assets in required format while keeping brand core intact."
+        }
+      ],
+      "model_story": "Kunal, a 27-year-old architectural team lead, received an urgent revision from the municipal health department at 4 PM: the proposed community diagnostic center required an isolated negative-pressure isolation room for airborne pathogens before the 10 AM tender submission. Keeping his team calm, Kunal reviewed the floor plan. Identifying that the storage bay adjacent to the eastern medical corridor had independent exterior wall access, he converted that footprint into the isolation unit, re-routing duct ventilation upward. He delegated the revised CAD detailing and mechanical drafting between his two associates. By 9 PM, the revised blueprints and bill of quantities were validated, printed, and ready for compliant submission.",
+      "blunder_story": "Rohan was told to change the plan. He threw the computer out the window, sued the client for mental harassment, and retired to the Himalayas.",
+      "olqs_projected": [
+        "Adaptability",
+        "Practical Intelligence",
+        "Organising Ability",
+        "Perseverance"
+      ],
+      "action_logic_breakdown": {
+        "observe": "Mandatory isolation room requirement added hours before tender deadline.",
+        "identify": "Need to integrate pathogen containment without altering load-bearing core.",
+        "plan_initiate": "Repurposed eastern storage bay with independent exterior exhaust.",
+        "coordinate": "Split CAD drafting and MEP duct revisions across team associates.",
+        "result": "Compliant blueprints and BOQ completed 12 hours ahead of submission."
+      }
     }
   ],
   "checklist": {
