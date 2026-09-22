@@ -1,0 +1,18 @@
+{
+  "name": "ssb-tat-handbook",
+  "version": "1.0.0",
+  "description": "SSB TAT Master Reference & Interactive Visualization Suite - 459 Professions across 25 Domains",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ssb",
+    "tat",
+    "thematic-apperception-test",
+    "psychology",
+    "interview-prep",
+    "interactive-guide"
+  ],
+  "author": "",
+  "license": "MIT"
+}

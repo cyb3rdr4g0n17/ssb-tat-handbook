@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSB TAT Master Reference & Interactive Visualization Suite</title>
+  <meta name="description" content="Master Reference and Interactive Visualization Guide for SSB Thematic Apperception Test (TAT) covering 459 professions across 25 career domains with 7-step practical action logic.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎖️</text></svg>">
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="brand-area">
+        <div class="brand-badge">
+          <span>SSB</span>
+          <span style="font-size: 0.8rem; opacity: 0.85;">TAT</span>
+        </div>
+        <div class="brand-titles">
+          <h1>SSB / TAT Career & Profession Reference</h1>
+          <p>459 Professions across 25 Domains · 7-Step Practical Action Engine</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <button id="themeToggleBtn" class="btn-icon" title="Toggle Theme">
+          ☀️
+        </button>
+        <button onclick="window.app.switchTab('simulator')" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+          ⏱️ Timed TAT Test
+        </button>
+      </div>
+    </header>
+
+    <!-- Quick Stats Banner -->
+    <section class="stats-banner">
+      <div class="stat-card" onclick="window.app.switchTab('explorer')">
+        <div class="stat-icon primary">🏢</div>
+        <div class="stat-info">
+          <h3>25</h3>
+          <p>Career Domains</p>
+        </div>
+      </div>
+      <div class="stat-card" onclick="window.app.switchTab('explorer')">
+        <div class="stat-icon purple">👔</div>
+        <div class="stat-info">
+          <h3>459</h3>
+          <p>Verified Professions</p>
+        </div>
+      </div>
+      <div class="stat-card" onclick="window.app.switchTab('situations')">
+        <div class="stat-icon cyan">🚨</div>
+        <div class="stat-info">
+          <h3>25</h3>
+          <p>Situation Bank Scenarios</p>
+        </div>
+      </div>
+      <div class="stat-card" onclick="window.app.switchTab('graph')">
+        <div class="stat-icon emerald">🎖️</div>
+        <div class="stat-info">
+          <h3>16</h3>
+          <p>Naturally Projected OLQs</p>
+        </div>
+      </div>
+      <div class="stat-card" onclick="window.app.switchTab('blueprint')">
+        <div class="stat-icon amber">⚙️</div>
+        <div class="stat-info">
+          <h3>7-Step</h3>
+          <p>Action Logic Pipeline</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs Bar -->
+    <nav class="nav-tabs-wrapper">
+      <div class="nav-tabs">
+        <button class="nav-tab-btn active" data-tab="blueprint">
+          <span>🌟</span> Executive Blueprint
+        </button>
+        <button class="nav-tab-btn" data-tab="graph">
+          <span>🕸️</span> Logic Knowledge Graph
+        </button>
+        <button class="nav-tab-btn" data-tab="explorer">
+          <span>🔍</span> 459 Professions Matrix <span class="tab-badge">459</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="situations">
+          <span>🚨</span> Situation Bank <span class="tab-badge">25</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="simulator">
+          <span>⏱️</span> Timed TAT Practice Simulator
+        </button>
+        <button class="nav-tab-btn" data-tab="checklist">
+          <span>📋</span> Master Checklist & Pitfalls
+        </button>
+      </div>
+    </nav>
+
+    <!-- TAB 1: Executive Blueprint & Methodology -->
+    <main id="tab-blueprint" class="tab-panel active">
+      <div class="blueprint-hero">
+        <span class="hero-tag">SSB Psychological Methodology</span>
+        <h2 class="hero-title">The Realistic Action Philosophy</h2>
+        <p class="hero-desc">
+          Thematic Apperception Test (TAT) assesses a candidate's mental framework, initiative, and social intelligence under ambiguity. 
+          Candidates frequently fail by memorising robotic stories or forcing an artificial military officer into every scene. 
+          This handbook changes the focus to <strong>authentic professional competence</strong>: what a professional actually <em>notices, decides, coordinates, and executes</em> in real life.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 2.5rem;">
+        <h3 class="section-title"><span>⚡</span> The 7-Step Core Action Logic</h3>
+        <p class="section-subtitle">The standard behavioral cycle of an effective leader during unforeseen situations.</p>
+
+        <div class="stepper-flow">
+          <div class="stepper-card active">
+            <span class="step-number">STEP 01</span>
+            <h4 class="step-card-title">OBSERVE</h4>
+            <p class="step-card-desc">Identify the people, place, physical resources and immediate friction without preconceptions.</p>
+          </div>
+          <div class="stepper-card">
+            <span class="step-number">STEP 02</span>
+            <h4 class="step-card-title">IDENTIFY</h4>
+            <p class="step-card-desc">Define the exact operational problem rather than reacting emotionally or jumping to conclusions.</p>
+          </div>
+          <div class="stepper-card">
+            <span class="step-number">STEP 03</span>
+            <h4 class="step-card-title">PLAN</h4>
+            <p class="step-card-desc">Choose a workable logical sequence using realistically available tools, personnel and SOPs.</p>
+          </div>
+          <div class="stepper-card">
+            <span class="step-number">STEP 04</span>
+            <h4 class="step-card-title">INITIATE</h4>
+            <p class="step-card-desc">Take the first useful action immediately; avoid passive waiting or helpless bystander hesitation.</p>
+          </div>
+          <div class="stepper-card">
+            <span class="step-number">STEP 05</span>
+            <h4 class="step-card-title">COORDINATE</h4>
+            <p class="step-card-desc">Involve the right stakeholders, delegate appropriately, and maintain clear, calm communication.</p>
+          </div>
+          <div class="stepper-card">
+            <span class="step-number">STEP 06</span>
+            <h4 class="step-card-title">EXECUTE</h4>
+            <p class="step-card-desc">Carry out the plan while dynamically adapting to constraints and fresh on-ground feedback.</p>
+          </div>
+          <div class="stepper-card">
+            <span class="step-number">STEP 07</span>
+            <h4 class="step-card-title">RESULT</h4>
+            <p class="step-card-desc">Deliver a realistic, measurable outcome. Avoid exaggerated, miraculous or theatrical heroism.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Contrast Box -->
+      <div class="action-compare-box">
+        <div class="compare-col blunder">
+          <span class="compare-badge">❌ Candidate Blunder (The Melodrama Trap)</span>
+          <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #f87171; margin-bottom: 0.5rem;">
+            Artificial Superhumanism & Lone-Wolf Syndrome
+          </h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            A picture shows an engineer looking at a crack on a construction wall. The candidate writes: <em>"Rohan was an honest man who hated terrorists. Suddenly bombs went off and Rohan single-handedly fought the terrorists with martial arts and saved India, demonstrating bravery and patriotism."</em><br><br>
+            <strong>Psychologist Assessment:</strong> Immature, melodramatic, incapable of practical problem analysis, forces uncalled-for violence, avoids realistic cooperation.
+          </p>
+        </div>
+
+        <div class="compare-col officer">
+          <span class="compare-badge">✅ Recommended Officer Response (Practical Logic)</span>
+          <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #34d399; margin-bottom: 0.5rem;">
+            Ground-Level Professional Competence & Team Coordination
+          </h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            The candidate writes: <em>"Rohan, a 26-year-old site engineer, noticed an unexpected surface fissure during the pre-cast foundation inspection. Halting nearby heavy machinery to ensure worker safety, he verified the soil settlement report, cross-checked foundation blueprints with the senior structural consultant, and coordinated with the masonry crew to inject epoxy grout before curing, keeping the construction on schedule."</em><br><br>
+            <strong>Psychologist Assessment:</strong> High practical intelligence, sense of responsibility, initiative, cooperation, and calm decision-making.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Factor Groups of OLQs -->
+      <div style="margin-bottom: 2.5rem;">
+        <h3 class="section-title"><span>🎖️</span> The 4 Factor Groups of Officer Like Qualities (OLQs)</h3>
+        <p class="section-subtitle">How professional action naturally demonstrates the 15+ SSB psychological parameters.</p>
+
+        <div class="factor-groups-grid">
+          <div class="factor-card">
+            <div class="factor-header">
+              <span class="factor-badge">FACTOR I</span>
+              <h4 class="factor-title">Planning & Organizing</h4>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Demonstrated through structured workflow diagnosis, realistic resource mapping, and clear verbal delegation.
+            </p>
+            <div class="olq-chip-list">
+              <span class="olq-chip" onclick="window.app.filterByOLQ('practical intelligence')">Practical Intelligence</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('organising ability')">Organising Ability</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('effective communication')">Effective Communication</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('problem solving')">Problem Solving</span>
+            </div>
+          </div>
+
+          <div class="factor-card">
+            <div class="factor-header">
+              <span class="factor-badge">FACTOR II</span>
+              <h4 class="factor-title">Social Adjustment</h4>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Demonstrated by respecting on-site hierarchies, uplifting peers, and taking moral ownership of mistakes.
+            </p>
+            <div class="olq-chip-list">
+              <span class="olq-chip" onclick="window.app.filterByOLQ('social adaptability')">Social Adaptability</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('cooperation')">Cooperation</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('sense of responsibility')">Sense of Responsibility</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('integrity')">Integrity</span>
+            </div>
+          </div>
+
+          <div class="factor-card">
+            <div class="factor-header">
+              <span class="factor-badge">FACTOR III</span>
+              <h4 class="factor-title">Social Effectiveness</h4>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Demonstrated by stepping forward during confusion, rallying teammates, and maintaining positive composure.
+            </p>
+            <div class="olq-chip-list">
+              <span class="olq-chip" onclick="window.app.filterByOLQ('initiative')">Initiative</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('self-confidence')">Self-Confidence</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('determination')">Determination</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('adaptability')">Adaptability</span>
+            </div>
+          </div>
+
+          <div class="factor-card">
+            <div class="factor-header">
+              <span class="factor-badge">FACTOR IV</span>
+              <h4 class="factor-title">Dynamic & Execution</h4>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Demonstrated by sustained follow-through, physical stamina, and physical/moral courage in crisis.
+            </p>
+            <div class="olq-chip-list">
+              <span class="olq-chip" onclick="window.app.filterByOLQ('courage')">Courage</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('stamina')">Stamina</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('perseverance')">Perseverance</span>
+              <span class="olq-chip" onclick="window.app.filterByOLQ('attention to detail')">Attention to Detail</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Practice Patterns -->
+      <div>
+        <h3 class="section-title"><span>🔄</span> The 3 Practice Pattern System</h3>
+        <p class="section-subtitle">Every profession in this handbook provides action models across three key scenarios.</p>
+
+        <div class="patterns-overview-grid">
+          <div class="pattern-banner-card">
+            <span style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase;">Pattern A</span>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 0.35rem 0 0.5rem 0;">Routine Operations</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+              Prepares for a scheduled task, executes pre-flight/pre-shift readiness checks, adjusts the baseline plan after observing subtle variances.
+            </p>
+          </div>
+          <div class="pattern-banner-card crisis">
+            <span style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--accent-danger); text-transform: uppercase;">Pattern B</span>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 0.35rem 0 0.5rem 0;">Problem / Crisis Mitigation</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+              Faces an unexpected breakdown, injury, discrepancy, or site hazard. Calms bystanders, isolates the fault, and applies standard emergency procedures.
+            </p>
+          </div>
+          <div class="pattern-banner-card team">
+            <span style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--accent-secondary); text-transform: uppercase;">Pattern C</span>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; margin: 0.35rem 0 0.5rem 0;">Team & Community Coordination</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+              Notices a junior, colleague, or community member needing assistance. Coordinates the solution without disrupting collective group velocity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 2: Interactive Logic Knowledge Graph -->
+    <main id="tab-graph" class="tab-panel">
+      <div class="graph-container-card">
+        <div class="graph-toolbar">
+          <div class="graph-controls">
+            <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Domain Filter:</label>
+            <select id="graphDomainFilter" class="graph-select" onchange="window.app.graph.filterGraph(this.value, document.getElementById('graphOLQFilter').value)">
+              <option value="all">All 25 Domains</option>
+              <option value="01">01. Fitness & Sports</option>
+              <option value="02">02. Armed Forces</option>
+              <option value="03">03. Police & Law Enforcement</option>
+              <option value="04">04. Civil Services & Government</option>
+              <option value="05">05. Education & Academia</option>
+              <option value="06">06. Medical & Healthcare</option>
+              <option value="07">07. Engineering</option>
+              <option value="08">08. IT & Technology</option>
+              <option value="09">09. Science & Research</option>
+              <option value="10">10. Skilled Trades</option>
+              <option value="11">11. Agriculture & Rural Development</option>
+              <option value="12">12. Business & Entrepreneurship</option>
+              <option value="13">13. Finance & Banking</option>
+              <option value="14">14. Corporate & Management</option>
+              <option value="15">15. Law & Legal Services</option>
+              <option value="16">16. Hospitality & Tourism</option>
+              <option value="17">17. Transport & Aviation</option>
+              <option value="18">18. Media & Communication</option>
+              <option value="19">19. Creative & Design</option>
+              <option value="20">20. Environment & Wildlife</option>
+              <option value="21">21. Disaster Management & Emergency Services</option>
+              <option value="22">22. Social Work & Development</option>
+              <option value="23">23. Logistics & Supply Chain</option>
+              <option value="24">24. Architecture, Construction & Real Estate</option>
+              <option value="25">25. Emerging & Modern Professions</option>
+            </select>
+
+            <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-left: 0.5rem;">OLQ Focus:</label>
+            <select id="graphOLQFilter" class="graph-select" onchange="window.app.graph.filterGraph(document.getElementById('graphDomainFilter').value, this.value)">
+              <option value="all">All 16 OLQs</option>
+              <option value="initiative">Initiative</option>
+              <option value="sense of responsibility">Sense of Responsibility</option>
+              <option value="practical intelligence">Practical Intelligence</option>
+              <option value="cooperation">Cooperation</option>
+              <option value="effective communication">Effective Communication</option>
+              <option value="organising ability">Organising Ability</option>
+              <option value="problem solving">Problem Solving</option>
+              <option value="perseverance">Perseverance</option>
+              <option value="determination">Determination</option>
+              <option value="courage">Courage</option>
+              <option value="stamina">Stamina</option>
+              <option value="self-confidence">Self-Confidence</option>
+            </select>
+          </div>
+
+          <div class="graph-controls">
+            <button class="btn-icon" onclick="window.app.graph.zoomIn()" title="Zoom In">➕</button>
+            <button class="btn-icon" onclick="window.app.graph.zoomOut()" title="Zoom Out">➖</button>
+            <button class="btn-icon" onclick="window.app.graph.resetView()" title="Reset View">🔄</button>
+          </div>
+        </div>
+
+        <div class="graph-viewport">
+          <canvas id="knowledgeGraphCanvas"></canvas>
+
+          <!-- Floating Inspector -->
+          <div id="graphInspector" class="graph-inspector"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 3: 459 Professions Matrix & Explorer -->
+    <main id="tab-explorer" class="tab-panel">
+      <!-- Search & Filters -->
+      <div class="explorer-search-bar">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="explorerSearchInput" placeholder="Search 459 professions, environments, actions, or OLQs... (Press / or Ctrl+K)">
+        </div>
+
+        <select id="explorerDomainSelect" class="filter-select">
+          <option value="all">All 25 Domains</option>
+          <option value="01">01. Fitness & Sports</option>
+          <option value="02">02. Armed Forces</option>
+          <option value="03">03. Police & Law Enforcement</option>
+          <option value="04">04. Civil Services & Government</option>
+          <option value="05">05. Education & Academia</option>
+          <option value="06">06. Medical & Healthcare</option>
+          <option value="07">07. Engineering</option>
+          <option value="08">08. IT & Technology</option>
+          <option value="09">09. Science & Research</option>
+          <option value="10">10. Skilled Trades</option>
+          <option value="11">11. Agriculture & Rural Development</option>
+          <option value="12">12. Business & Entrepreneurship</option>
+          <option value="13">13. Finance & Banking</option>
+          <option value="14">14. Corporate & Management</option>
+          <option value="15">15. Law & Legal Services</option>
+          <option value="16">16. Hospitality & Tourism</option>
+          <option value="17">17. Transport & Aviation</option>
+          <option value="18">18. Media & Communication</option>
+          <option value="19">19. Creative & Design</option>
+          <option value="20">20. Environment & Wildlife</option>
+          <option value="21">21. Disaster Management & Emergency Services</option>
+          <option value="22">22. Social Work & Development</option>
+          <option value="23">23. Logistics & Supply Chain</option>
+          <option value="24">24. Architecture, Construction & Real Estate</option>
+          <option value="25">25. Emerging & Modern Professions</option>
+        </select>
+
+        <select id="explorerOLQSelect" class="filter-select">
+          <option value="all">All 16 OLQs</option>
+          <option value="initiative">Initiative (369 roles)</option>
+          <option value="sense of responsibility">Sense of Responsibility (360 roles)</option>
+          <option value="practical intelligence">Practical Intelligence (250 roles)</option>
+          <option value="cooperation">Cooperation (222 roles)</option>
+          <option value="effective communication">Effective Communication (194 roles)</option>
+          <option value="organising ability">Organising Ability (177 roles)</option>
+          <option value="problem solving">Problem Solving (79 roles)</option>
+          <option value="perseverance">Perseverance (75 roles)</option>
+          <option value="determination">Determination (42 roles)</option>
+          <option value="attention to detail">Attention to Detail (16 roles)</option>
+          <option value="courage">Courage (12 roles)</option>
+        </select>
+      </div>
+
+      <!-- Domain Chips Scroller -->
+      <div id="domainChipsScroller" class="domain-chips-scroller"></div>
+
+      <!-- Results Count -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <span id="explorerResultsCount" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600;">
+          Loading 459 professions...
+        </span>
+      </div>
+
+      <!-- Professions Cards Grid -->
+      <div id="professionsGrid" class="professions-grid"></div>
+
+      <!-- Pagination -->
+      <div id="explorerPagination" class="pagination-bar"></div>
+    </main>
+
+    <!-- TAB 4: 25-Scenario TAT Situation Bank -->
+    <main id="tab-situations" class="tab-panel">
+      <div style="margin-bottom: 2rem;">
+        <h3 class="section-title"><span>🚨</span> Part III - TAT Situation Bank</h3>
+        <p class="section-subtitle">
+          25 standard high-yield operational scenarios tested in SSB. Select any scenario to see its 5-stage resolution protocol and match it with a realistic profession.
+        </p>
+      </div>
+
+      <div id="situationBankGrid" class="situation-bank-grid"></div>
+    </main>
+
+    <!-- TAB 5: Timed TAT Practice Simulator -->
+    <main id="tab-simulator" class="tab-panel">
+      <div class="simulator-layout">
+        <!-- Stimulus Panel -->
+        <div class="stimulus-card">
+          <div class="stimulus-image-wrap">
+            <img id="stimulusImage" src="assets/images/scene_engineering.jpg" alt="TAT Picture Prompt">
+            <div id="observationOverlay" class="observation-overlay" style="display: none;">
+              <span style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">OBSERVE THE SCENE</span>
+              <div id="observeTimerDisplay" class="observation-timer-text">30s</div>
+              <p style="font-size: 0.85rem; opacity: 0.9; max-width: 320px; text-align: center; margin-top: 0.5rem;">
+                Note the main character, age, mood, physical resources, and immediate problem.
+              </p>
+            </div>
+          </div>
+
+          <div class="stimulus-details">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase;">Prompt Stimulus</span>
+                <h3 id="stimulusTitle" style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem;">
+                  Civil Infrastructure & Bridge Construction
+                </h3>
+              </div>
+            </div>
+
+            <p id="stimulusCue" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0.75rem 0;">
+              Three engineers review blueprints at dusk next to a deep excavation area and bridge pillar.
+            </p>
+
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.35rem;">
+                Suggested Protagonist Roles (Click to autofill):
+              </span>
+              <div id="stimulusSuggestedRoles" style="display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+            </div>
+
+            <!-- Slide Selector -->
+            <div style="margin-top: 1.25rem;">
+              <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">
+                Select Practice Scene:
+              </label>
+              <select id="stimulusSelect" class="filter-select" style="width: 100%; padding: 0.55rem 0.85rem;"></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Writing Workspace Panel -->
+        <div class="writing-workspace-card">
+          <div class="workspace-header">
+            <div>
+              <h3 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;">Story Formulation Workspace</h3>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">Structure: Background ➔ Core Action & Coordination ➔ Measurable Result</p>
+            </div>
+
+            <div id="writingTimerBadge" class="writing-timer-badge">
+              ⏱️ 4:00
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+            <button id="startObservationBtn" class="btn-primary">
+              ▶ Start 30s Observation
+            </button>
+            <button id="resetSimulatorBtn" class="btn-primary" style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); color: var(--text-primary);">
+              🔄 Reset
+            </button>
+          </div>
+
+          <textarea id="storyWritingInput" class="story-textarea" placeholder="Start writing your story here...
+Tip: Name your protagonist, state age & profession, define what caused the situation, take the first useful initiative, coordinate with teammates, and end with a realistic, completed outcome."></textarea>
+
+          <div class="writing-stats-row">
+            <span id="storyWordCount">0 words (Target: 90-120)</span>
+            <span id="storyCharCount">0 characters</span>
+          </div>
+
+          <button id="evaluateStoryBtn" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 1rem;">
+            🎯 Evaluate My Story (Part IV Checklist & Pitfall Radar)
+          </button>
+
+          <!-- Evaluation Results -->
+          <div id="evaluationResultsArea" class="evaluation-results-box"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 6: Master Checklist & Pitfalls -->
+    <main id="tab-checklist" class="tab-panel">
+      <div style="margin-bottom: 2rem;">
+        <h3 class="section-title"><span>📋</span> Part IV - Quick Reference: TAT Checklist</h3>
+        <p class="section-subtitle">
+          The 10 essential validation criteria and the 7 lethal psychological pitfalls every candidate must memorize.
+        </p>
+      </div>
+
+      <div class="checklist-container">
+        <!-- 10-Point Checklist -->
+        <div class="checklist-card">
+          <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-primary);">
+            ✅ The 10 Essential Story Criteria
+          </h4>
+
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk1" checked>
+            <label for="chk1" class="check-text"><strong>1. Is the protagonist clearly identified?</strong> (Name, age, professional designation, or role)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk2" checked>
+            <label for="chk2" class="check-text"><strong>2. Does the profession actually matter to the solution?</strong> (Uses domain knowledge, equipment, or SOPs)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk3" checked>
+            <label for="chk3" class="check-text"><strong>3. Is the problem specific rather than vague?</strong> (A concrete leak, delay, injury, anomaly, or constraint)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk4" checked>
+            <label for="chk4" class="check-text"><strong>4. Does the protagonist take immediate initiative?</strong> (Steps forward without passive bystander hesitation)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk5" checked>
+            <label for="chk5" class="check-text"><strong>5. Are actions practical with available resources?</strong> (Avoids magic solutions or uncalled-for heavy equipment)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk6" checked>
+            <label for="chk6" class="check-text"><strong>6. Does the story include appropriate coordination?</strong> (Delegates, involves staff, authorities, or community)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk7" checked>
+            <label for="chk7" class="check-text"><strong>7. Does the protagonist adapt when required?</strong> (Adjusts to weather, budget, or unexpected constraints)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk8" checked>
+            <label for="chk8" class="check-text"><strong>8. Is the result realistic rather than heroic or exaggerated?</strong> (Plausible, observable completion)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk9" checked>
+            <label for="chk9" class="check-text"><strong>9. Does the story avoid unnecessary drama?</strong> (No weapons, murder, bombs, or melodramatic trauma)</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" class="check-checkbox" id="chk10" checked>
+            <label for="chk10" class="check-text"><strong>10. Could the same action sequence work in real life?</strong> (High practical intelligence and feasibility)</label>
+          </div>
+        </div>
+
+        <!-- 7 Mistakes to Avoid -->
+        <div class="checklist-card">
+          <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: #f87171;">
+            ⚠️ The 7 Lethal Pitfalls to Avoid
+          </h4>
+
+          <div class="pitfall-item">
+            <span>1.</span>
+            <div><strong>Writing a profession description instead of a story.</strong> Stating what an engineer does daily rather than solving a specific incident.</div>
+          </div>
+          <div class="pitfall-item">
+            <span>2.</span>
+            <div><strong>Using the same generic action for every profession.</strong> Saying "he worked very hard day and night" instead of exact domain procedures.</div>
+          </div>
+          <div class="pitfall-item">
+            <span>3.</span>
+            <div><strong>Adding unrealistic authority, resources or outcomes.</strong> Making a 22-year-old junior intern order entire state police forces.</div>
+          </div>
+          <div class="pitfall-item">
+            <span>4.</span>
+            <div><strong>Making the protagonist solve everything alone (Lone-Wolf Syndrome).</strong> Refusing to coordinate with peers, seniors, or helpers.</div>
+          </div>
+          <div class="pitfall-item">
+            <span>5.</span>
+            <div><strong>Ending abruptly without a clear, measurable result.</strong> Leaving the task unfinished or stating "they were all happy" without a tangible outcome.</div>
+          </div>
+          <div class="pitfall-item">
+            <span>6.</span>
+            <div><strong>Using unnecessary violence or melodrama when a practical solution exists.</strong> Inventing terrorists or sudden death in mundane workplace pictures.</div>
+          </div>
+          <div class="pitfall-item">
+            <span>7.</span>
+            <div><strong>Trying to display every OLQ explicitly.</strong> Writing "he showed high initiative and intelligence" instead of letting the actions speak for themselves.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>SSB / TAT Career & Profession Reference Handbook · 459 Professions Across 25 Domains</p>
+      <p style="margin-top: 0.35rem; opacity: 0.75;">Designed for Indian Armed Forces SSB Psychological Evaluation Preparation.</p>
+    </footer>
+  </div>
+
+  <!-- Modal: Profession Deep-Dive -->
+  <div id="professionModalOverlay" class="modal-overlay">
+    <div class="modal-content">
+      <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+      
+      <div style="margin-bottom: 1.25rem;">
+        <span id="modalProfDomain" class="prof-domain-badge">Domain 01</span>
+        <h2 id="modalProfTitle" style="font-family: var(--font-display); font-size: 1.85rem; color: var(--text-primary); margin-top: 0.35rem;">
+          Profession Title
+        </h2>
+        <div style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.4rem;">
+          <span>📍</span> <span id="modalProfEnv">Work Environment</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-family: var(--font-display); font-size: 1rem; color: var(--accent-secondary); margin-bottom: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px;">
+          Standard Professional Workflow
+        </h4>
+        <div id="modalProfWorkflow" style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md);"></div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-family: var(--font-display); font-size: 1rem; color: var(--accent-primary); margin-bottom: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px;">
+          3 Distinct TAT Practice Patterns
+        </h4>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div style="background: var(--bg-surface); border-left: 3px solid var(--accent-primary); padding: 0.85rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+            <strong style="color: var(--accent-primary); font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">A. Routine Operations</strong>
+            <p id="modalPatternRoutine" style="font-size: 0.85rem; color: var(--text-primary);"></p>
+          </div>
+          <div style="background: var(--bg-surface); border-left: 3px solid var(--accent-danger); padding: 0.85rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+            <strong style="color: var(--accent-danger); font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">B. Problem / Crisis Management</strong>
+            <p id="modalPatternCrisis" style="font-size: 0.85rem; color: var(--text-primary);"></p>
+          </div>
+          <div style="background: var(--bg-surface); border-left: 3px solid var(--accent-secondary); padding: 0.85rem; border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+            <strong style="color: var(--accent-secondary); font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">C. Team & Community Coordination</strong>
+            <p id="modalPatternTeam" style="font-size: 0.85rem; color: var(--text-primary);"></p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-family: var(--font-display); font-size: 1rem; color: var(--accent-success); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">
+          Past-Tense Practical Action Sentence
+        </h4>
+        <p id="modalProfAction" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); padding: 0.85rem 1rem; border-radius: var(--radius-md); font-size: 0.95rem; color: var(--text-primary); line-height: 1.5;"></p>
+      </div>
+
+      <div style="margin-bottom: 1.75rem;">
+        <h4 style="font-family: var(--font-display); font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
+          Naturally Projected OLQs
+        </h4>
+        <div id="modalProfOLQs" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+      </div>
+
+      <button id="modalPracticeBtn" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 1rem;">
+        🚀 Practice This Role in TAT Simulator
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal: Situation Solver -->
+  <div id="situationSolverModal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="sitModalCloseBtn" class="modal-close-btn">&times;</button>
+      <h2 id="sitModalTitle" style="font-family: var(--font-display); font-size: 1.6rem; color: var(--accent-secondary); margin-bottom: 0.5rem;">
+        Situation Details
+      </h2>
+      <p id="sitModalDesc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;"></p>
+
+      <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+        <strong style="font-size: 0.8rem; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.25rem;">
+          Standard Resolution Flow:
+        </strong>
+        <p id="sitModalFlow" style="font-size: 0.9rem; color: var(--text-primary);"></p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">
+          Choose a Matching Profession to Solve This Situation:
+        </label>
+        <select id="sitSolverProfSelect" class="filter-select" style="width: 100%;"></select>
+      </div>
+
+      <button id="sitSolverGenerateBtn" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 1rem;">
+        ⚡ Generate Recommended Action Blueprint
+      </button>
+
+      <div id="sitSolverResultBox" style="display: none; margin-top: 1rem;"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/graph.js"></script>
+  <script src="js/explorer.js"></script>
+  <script src="js/situation-bank.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
