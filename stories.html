@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSB 610+ Model Story Archive | TAT & PPDT Officer-Grade Psychological Dossier</title>
+  <meta name="description" content="Access 610 complete officer-grade model stories for 520 TAT pictures and 90 PPDT stimuli with DIPR 4-step action logic, character profiles, and 15 OLQ mappings.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎖️</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Dedicated Styles for Stories Master Dossier */
+    .stories-header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1.5rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .stories-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .stories-brand h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 0;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stories-hero-section {
+      padding: 2.5rem 1.5rem 1.75rem;
+      background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .stories-hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-display);
+    }
+
+    .stories-hero-desc {
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .stats-pills-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-pill strong {
+      color: var(--accent-secondary);
+    }
+
+    /* Filter & Controls Panel */
+    .controls-panel {
+      max-width: 1380px;
+      margin: 1.5rem auto 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .controls-top-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-box-wrap {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .search-box-wrap input {
+      width: 100%;
+      padding: 0.75rem 2.5rem 0.75rem 1.1rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition-fast);
+    }
+
+    .search-box-wrap input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1rem;
+      display: none;
+    }
+
+    .mode-buttons-group {
+      display: flex;
+      gap: 0.4rem;
+      background: var(--bg-primary);
+      padding: 4px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .mode-filter-btn {
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .mode-filter-btn.active {
+      background: var(--accent-primary);
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .controls-bottom-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.85rem;
+    }
+
+    .dropdowns-wrap {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-select {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 0.85rem;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .filter-select:focus {
+      border-color: var(--accent-secondary);
+    }
+
+    .results-count-badge {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Stories Grid */
+    .stories-container {
+      max-width: 1380px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .story-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .story-card-image-wrap {
+      height: 190px;
+      position: relative;
+      background: #020617;
+      overflow: hidden;
+    }
+
+    .story-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-normal);
+    }
+
+    .story-card:hover .story-card-img {
+      transform: scale(1.04);
+    }
+
+    .story-type-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .story-type-badge.tat-badge {
+      background: rgba(99, 102, 241, 0.95);
+      color: #fff;
+    }
+
+    .story-type-badge.ppdt-badge {
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+    }
+
+    .story-cat-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #94a3b8;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .story-card-body {
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .story-hero-line {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .hero-name {
+      color: var(--text-primary);
+    }
+
+    .hero-role-tag {
+      color: var(--accent-secondary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      background: rgba(6, 182, 212, 0.12);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      margin-left: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 140px;
+    }
+
+    .story-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+      font-family: var(--font-display);
+    }
+
+    .story-card-excerpt {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 0.9rem;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .story-card-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.75rem;
+      margin-bottom: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .story-meta-tags {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .story-word-badge {
+      font-weight: 600;
+      color: var(--accent-success);
+    }
+
+    .story-box-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-warning);
+      background: rgba(245, 158, 11, 0.12);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+    }
+
+    .story-olqs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .story-olq-chip {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      background: var(--bg-tertiary);
+      color: var(--accent-primary);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .story-olq-chip:hover {
+      background: var(--accent-primary);
+      color: #fff;
+    }
+
+    .story-card-actions {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 0.4rem;
+    }
+
+    .btn-story-action {
+      padding: 0.45rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      transition: var(--transition-fast);
+    }
+
+    .btn-story-action.primary {
+      background: var(--accent-primary);
+      color: #fff;
+    }
+
+    .btn-story-action.primary:hover {
+      background: var(--accent-primary-hover);
+    }
+
+    .btn-story-action.secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-story-action.secondary:hover {
+      border-color: var(--accent-primary);
+    }
+
+    .btn-story-action.accent {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--accent-secondary);
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .btn-story-action.accent:hover {
+      background: var(--accent-secondary);
+      color: #0f172a;
+    }
+
+    /* Pagination */
+    .pagination-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .pag-btn {
+      padding: 0.55rem 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .pag-btn:hover:not(:disabled) {
+      background: var(--accent-primary);
+      color: #fff;
+    }
+
+    .pag-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pag-info {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 0 0.5rem;
+    }
+
+    /* Modal Styling */
+    .story-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .story-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .story-modal-wrapper {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 1001;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .story-modal-wrapper.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .story-modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      max-width: 1050px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .story-modal-header {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: var(--bg-secondary);
+      z-index: 10;
+    }
+
+    .story-modal-body {
+      padding: 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .story-modal-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .modal-img-container {
+      background: #020617;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 1rem;
+    }
+
+    .modal-img-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 420px;
+      object-fit: contain;
+    }
+
+    .modal-ppdt-box-display {
+      background: var(--bg-primary);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--radius-md);
+      padding: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .ppdt-char-token {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      margin: 3px;
+    }
+
+    .token-sex { font-weight: 700; color: var(--accent-primary); }
+    .token-age { font-weight: 700; color: var(--text-primary); }
+    .token-mood { font-weight: 800; color: var(--accent-success); }
+    .token-role { color: var(--text-muted); font-size: 0.72rem; }
+
+    .modal-hero-card {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-story-quote {
+      background: rgba(99, 102, 241, 0.08);
+      border-left: 4px solid var(--accent-primary);
+      padding: 1.15rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .action-steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .step-label {
+      font-weight: 700;
+      min-width: 90px;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+    }
+
+    .step-label.observe { color: var(--accent-primary); }
+    .step-label.plan { color: var(--accent-warning); }
+    .step-label.execute { color: var(--accent-secondary); }
+    .step-label.outcome { color: var(--accent-success); }
+
+    .blunder-box {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      color: #fca5a5;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .toast-popup {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--accent-primary);
+      color: #fff;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      z-index: 2000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+      pointer-events: none;
+    }
+
+    .toast-popup.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="stories-header-nav">
+    <a href="index.html" class="stories-brand">
+      <span style="font-size: 1.5rem;">🎖️</span>
+      <div>
+        <h1>SSB Model Story Master Dossier</h1>
+        <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">610 Authentic Officer-Grade Stories</span>
+      </div>
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 0.65rem;">
+      <a href="index.html" class="btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; text-decoration: none;">
+        🏠 Handbook Home
+      </a>
+      <a href="index.html?tab=simulator" class="btn-primary" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; text-decoration: none;">
+        ⏱️ Timed Simulator
+      </a>
+      <button id="themeToggleBtn" class="btn-icon" title="Toggle Theme" style="padding: 0.45rem 0.65rem;">
+        ☀️
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="stories-hero-section">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <span class="hero-tag" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+        DIPR Psychological Testing Suite
+      </span>
+      <h2 class="stories-hero-title">Officer-Like Quality (OLQ) Model Stories</h2>
+      <p class="stories-hero-desc">
+        Explore 610 complete, standardized model stories crafted for all 520 TAT pictures and 90 PPDT stimuli. 
+        Each scenario follows the authentic <strong>7-Step Action Philosophy (Observe → Plan → Execute → Result)</strong> 
+        with identified heroes, realistic professional workflows, projected OLQs, and candidate blunder warnings.
+      </p>
+
+      <div class="stats-pills-row">
+        <div class="stat-pill">
+          <span>📚 Total Stories:</span> <strong>610 Officer-Grade</strong>
+        </div>
+        <div class="stat-pill">
+          <span>🖼️ Stage-2 TAT:</span> <strong>520 Pictures</strong>
+        </div>
+        <div class="stat-pill">
+          <span>📦 Stage-1 PPDT:</span> <strong>90 Slides</strong>
+        </div>
+        <div class="stat-pill">
+          <span>✨ Psychology:</span> <strong>15 OLQs Mapped</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Controls -->
+  <div class="controls-panel">
+    <div class="controls-top-row">
+      <div class="search-box-wrap">
+        <input type="text" id="storySearchInput" placeholder="🔍 Search by hero, profession, keyword, story text, or slide number (e.g. tat_42, NDRF, flood)...">
+        <button id="clearSearchBtn" class="clear-search-btn" title="Clear Search">✕</button>
+      </div>
+
+      <div class="mode-buttons-group">
+        <button class="mode-filter-btn active" data-mode="all">
+          <span>🌐</span> All (610)
+        </button>
+        <button class="mode-filter-btn" data-mode="tat">
+          <span>🖼️</span> TAT (520)
+        </button>
+        <button class="mode-filter-btn" data-mode="ppdt">
+          <span>📦</span> PPDT (90)
+        </button>
+      </div>
+    </div>
+
+    <div class="controls-bottom-row">
+      <div class="dropdowns-wrap">
+        <select id="categorySelect" class="filter-select">
+          <option value="all">📂 All Categories</option>
+        </select>
+
+        <select id="olqSelect" class="filter-select">
+          <option value="all">✨ All OLQ Projections</option>
+        </select>
+
+        <select id="sortSelect" class="filter-select">
+          <option value="num_asc">🔢 Sort: Slide # (1 → 610)</option>
+          <option value="num_desc">🔢 Sort: Slide # (610 → 1)</option>
+          <option value="word_asc">📝 Word Count: Shortest First</option>
+          <option value="word_desc">📝 Word Count: Longest First</option>
+        </select>
+      </div>
+
+      <div id="resultCount" class="results-count-badge">
+        Showing 610 model stories
+      </div>
+    </div>
+  </div>
+
+  <!-- Stories Grid Container -->
+  <main class="stories-container">
+    <div id="storiesGrid" class="stories-grid">
+      <!-- Injected dynamically by stories-page.js -->
+    </div>
+
+    <!-- Pagination Controls -->
+    <div id="paginationControls"></div>
+  </main>
+
+  <!-- Story Deep-Dive Modal -->
+  <div id="modalOverlay" class="story-modal-overlay"></div>
+  <div id="storyDetailModal" class="story-modal-wrapper">
+    <div class="story-modal-content">
+      <div class="story-modal-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span id="modalBadge" class="story-type-badge tat-badge">TAT #1</span>
+          <div>
+            <h3 id="modalTitle" style="font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--text-primary);">
+              Scenario Title
+            </h3>
+            <span id="modalCategory" style="font-size: 0.78rem; color: var(--accent-secondary); font-weight: 600;">
+              Category
+            </span>
+          </div>
+        </div>
+        <button id="modalCloseBtn" class="btn-icon" style="font-size: 1.25rem;">✕</button>
+      </div>
+
+      <div class="story-modal-body">
+        <!-- Left Side: Image & Characters -->
+        <div>
+          <div class="modal-img-container">
+            <img id="modalImg" src="" alt="Stimulus Image">
+          </div>
+
+          <!-- PPDT Box If applicable -->
+          <div id="modalPpdtBox" class="modal-ppdt-box-display" style="display: none;">
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-warning); text-transform: uppercase; margin-bottom: 0.4rem;">
+              📦 Stage-1 PPDT Box Plotting
+            </div>
+            <div id="modalPpdtChars" style="display: flex; flex-wrap: wrap;"></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <button id="modalSpeakBtn" class="btn-secondary" style="width: 100%; justify-content: center; padding: 0.65rem;">
+              🔊 Read Aloud
+            </button>
+            <button id="modalCopyBtn" class="btn-secondary" style="width: 100%; justify-content: center; padding: 0.65rem;">
+              📋 Copy Story
+            </button>
+            <button id="modalPracticeBtn" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.65rem;">
+              ⏱️ Practice in Timed Simulator
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side: Story & Psychological Breakdown -->
+        <div>
+          <div id="modalHero"></div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.5px;">
+              📖 DIPR Officer-Grade Model Story:
+            </span>
+            <span id="modalWordCount" style="font-size: 0.78rem; font-weight: 600; color: var(--accent-success);">
+              100 Words
+            </span>
+          </div>
+
+          <blockquote id="modalStory" class="modal-story-quote"></blockquote>
+
+          <!-- 4-Step Action Logic -->
+          <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 0.4rem;">
+            ⚡ 4-Step Execution Logic:
+          </div>
+          <div class="action-steps-grid">
+            <div class="step-item">
+              <span class="step-label observe">1. Observe</span>
+              <span id="modalActionObserve" style="color: var(--text-primary);"></span>
+            </div>
+            <div class="step-item">
+              <span class="step-label plan">2. Plan</span>
+              <span id="modalActionPlan" style="color: var(--text-primary);"></span>
+            </div>
+            <div class="step-item">
+              <span class="step-label execute">3. Execute</span>
+              <span id="modalActionExecute" style="color: var(--text-primary);"></span>
+            </div>
+            <div class="step-item">
+              <span class="step-label outcome">4. Outcome</span>
+              <span id="modalActionOutcome" style="color: var(--text-primary);"></span>
+            </div>
+          </div>
+
+          <!-- Demonstrated OLQs -->
+          <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 0.4rem;">
+            🎯 Projected Officer-Like Qualities (OLQs):
+          </div>
+          <div id="modalOlqs" style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem;"></div>
+
+          <!-- Common Blunder Warning -->
+          <div id="modalBlunder" class="blunder-box"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="copyToast" class="toast-popup">Story copied to clipboard!</div>
+
+  <!-- Data & Controller Scripts -->
+  <script src="js/model-stories-data.js"></script>
+  <script src="js/stories-page.js"></script>
+</body>
+</html>

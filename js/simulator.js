@@ -192,6 +192,13 @@ class TATSimulator {
     this.resetTest();
   }
 
+  openModelStory() {
+    if (!this.currentPrompt) return;
+    const mode = this.currentMode === 'ppdt' ? 'ppdt' : 'tat';
+    const targetUrl = `stories.html?id=${this.currentPrompt.id}&mode=${mode}`;
+    window.open(targetUrl, '_blank');
+  }
+
   /* --------------------------------------------------------------------------
      12-SLIDE CONTINUOUS TAT MOCK EXAM BATTERY
      -------------------------------------------------------------------------- */

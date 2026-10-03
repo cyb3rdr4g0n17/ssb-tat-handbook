@@ -32,6 +32,9 @@
         <button id="themeToggleBtn" class="btn-icon" title="Toggle Theme">
           ☀️
         </button>
+        <a href="stories.html" class="btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; border-radius: var(--radius-sm); border: 1px solid var(--accent-secondary); color: var(--accent-secondary);">
+          📖 610 Model Stories
+        </a>
         <button onclick="window.app.switchTab('simulator')" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
           ⏱️ Timed SSB Test
         </button>
@@ -98,6 +101,9 @@
         <button class="nav-tab-btn" data-tab="library">
           <span>📁</span> Intel & Study Library <span class="tab-badge">16 PDFs</span>
         </button>
+        <a href="stories.html" class="nav-tab-btn" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <span>📖</span> Model Stories Dossier <span class="tab-badge" style="background: var(--accent-primary); color: #fff;">610</span>
+        </a>
         <button class="nav-tab-btn" data-tab="checklist">
           <span>📋</span> Master Checklist & Pitfalls
         </button>
@@ -606,9 +612,14 @@ Tip: Name your protagonist, state age & profession, define what caused the situa
             <span id="storyCharCount">0 characters</span>
           </div>
 
-          <button id="evaluateStoryBtn" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 1rem;">
-            🎯 Evaluate My Story (Part IV Checklist & Pitfall Radar)
-          </button>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <button id="evaluateStoryBtn" class="btn-primary" style="justify-content: center; padding: 0.85rem; font-size: 0.95rem;">
+              🎯 Evaluate My Story
+            </button>
+            <button id="viewModelStoryBtn" onclick="window.simulator.openModelStory()" class="btn-secondary" style="justify-content: center; padding: 0.85rem; font-size: 0.95rem; border-color: var(--accent-secondary); color: var(--accent-secondary); background: rgba(6, 182, 212, 0.1);">
+              💡 View Model Story (Dossier)
+            </button>
+          </div>
 
           <!-- Evaluation Results -->
           <div id="evaluationResultsArea" class="evaluation-results-box"></div>

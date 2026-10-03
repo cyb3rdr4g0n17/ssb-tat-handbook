@@ -10,5 +10,8 @@
   "8": "extract_full_data.py",
   "9": "data.js",
   "10": "IntelLibrary",
-  "11": "stimuli-data.js"
+  "11": "stimuli-data.js",
+  "12": "StoriesDossier",
+  "13": "generate_all_model_stories.py",
+  "14": "model-stories-data.js"
 }
