@@ -26,11 +26,14 @@
       </div>
 
       <div class="header-controls">
+        <button id="soundToggleBtn" class="btn-icon" title="Toggle Audio Alert Cues" style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; padding: 0.45rem 0.85rem; border-radius: var(--radius-full); background: var(--bg-tertiary); border: 1px solid var(--border-subtle); color: var(--text-primary); cursor: pointer;">
+          🔊 Sound On
+        </button>
         <button id="themeToggleBtn" class="btn-icon" title="Toggle Theme">
           ☀️
         </button>
         <button onclick="window.app.switchTab('simulator')" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-          ⏱️ Timed TAT Test
+          ⏱️ Timed SSB Test
         </button>
       </div>
     </header>
@@ -51,25 +54,25 @@
           <p>Verified Professions</p>
         </div>
       </div>
+      <div class="stat-card" onclick="window.app.switchTab('simulator')">
+        <div class="stat-icon cyan">🖼️</div>
+        <div class="stat-info">
+          <h3>610+</h3>
+          <p>Real Board Stimuli</p>
+        </div>
+      </div>
+      <div class="stat-card" onclick="window.app.switchTab('library')">
+        <div class="stat-icon emerald">📚</div>
+        <div class="stat-info">
+          <h3>16</h3>
+          <p>Curated Intel PDFs</p>
+        </div>
+      </div>
       <div class="stat-card" onclick="window.app.switchTab('situations')">
-        <div class="stat-icon cyan">🚨</div>
+        <div class="stat-icon amber">🚨</div>
         <div class="stat-info">
           <h3>25</h3>
           <p>Situation Bank Scenarios</p>
-        </div>
-      </div>
-      <div class="stat-card" onclick="window.app.switchTab('graph')">
-        <div class="stat-icon emerald">🎖️</div>
-        <div class="stat-info">
-          <h3>16</h3>
-          <p>Naturally Projected OLQs</p>
-        </div>
-      </div>
-      <div class="stat-card" onclick="window.app.switchTab('blueprint')">
-        <div class="stat-icon amber">⚙️</div>
-        <div class="stat-info">
-          <h3>7-Step</h3>
-          <p>Action Logic Pipeline</p>
         </div>
       </div>
     </section>
@@ -90,7 +93,10 @@
           <span>🚨</span> Situation Bank <span class="tab-badge">25</span>
         </button>
         <button class="nav-tab-btn" data-tab="simulator">
-          <span>⏱️</span> Timed TAT Practice Simulator
+          <span>⏱️</span> Timed SSB Simulator <span class="tab-badge">610 Stimuli</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="library">
+          <span>📁</span> Intel & Study Library <span class="tab-badge">16 PDFs</span>
         </button>
         <button class="nav-tab-btn" data-tab="checklist">
           <span>📋</span> Master Checklist & Pitfalls
@@ -436,13 +442,62 @@
       <div id="situationBankGrid" class="situation-bank-grid"></div>
     </main>
 
-    <!-- TAB 5: Timed TAT Practice Simulator -->
+    <!-- TAB 5: Timed SSB Practice Simulator (TAT & PPDT) -->
     <main id="tab-simulator" class="tab-panel">
+      <!-- Mode Switcher -->
+      <div class="simulator-mode-bar">
+        <button class="simulator-mode-btn active" data-mode="tat">
+          <span>🔵</span> Stage-2 TAT Practice (520 Slides)
+        </button>
+        <button class="simulator-mode-btn" data-mode="ppdt">
+          <span>🟢</span> Stage-1 PPDT Arena (90 Stimuli)
+        </button>
+        <button class="simulator-mode-btn" data-mode="battery">
+          <span>🎖️</span> 12-Slide Continuous Mock Battery
+        </button>
+      </div>
+
+      <!-- Battery Progress Card (Visible in Continuous Exam Mode) -->
+      <div id="batteryProgressBar" class="battery-progress-card" style="display: none;">
+        <div class="battery-progress-header">
+          <div>
+            <span id="batteryCurrentSlideNum" class="battery-slide-title">Slide 1 of 12</span>
+            <span class="battery-status-tag">Continuous Mock Exam · Auto-Advancing</span>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">SSB Psychological Testing Hall Simulation</span>
+        </div>
+        <div class="battery-track">
+          <div id="batteryProgressFill" class="battery-fill" style="width: 8.3%;"></div>
+        </div>
+      </div>
+
+      <!-- Stimulus Category Filter Chips & Quick Actions -->
+      <div id="stimulusCategoryBar" class="stimulus-actions-bar">
+        <div class="stimulus-chips-wrap">
+          <button class="stimulus-category-chip active" data-category="ALL">All Categories</button>
+          <button class="stimulus-category-chip" data-category="Crisis & Rescue">🚨 Crisis & Rescue</button>
+          <button class="stimulus-category-chip" data-category="Rural & Community Development">🌾 Rural & Community</button>
+          <button class="stimulus-category-chip" data-category="Industrial & Engineering">⚙️ Industrial & Engineering</button>
+          <button class="stimulus-category-chip" data-category="Law, Order & Security">🛡️ Law & Security</button>
+          <button class="stimulus-category-chip" data-category="Healthcare & Medical">🏥 Healthcare</button>
+          <button class="stimulus-category-chip" data-category="Maritime & Aviation">✈️ Aviation & Maritime</button>
+          <button class="stimulus-category-chip" data-category="Youth, Sports & Education">🎓 Youth & Sports</button>
+        </div>
+        <div class="stimulus-quick-btns">
+          <button onclick="window.simulator.loadRandomPrompt()" class="btn-primary btn-sm" title="Pick a random image for spontaneous practice">
+            🎲 Random Stimulus
+          </button>
+          <button onclick="window.simulator.loadBlankSlide()" class="btn-primary btn-sm" style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); color: var(--text-primary);" title="Practice Slide 12 Blank Slide">
+            📄 Slide 12 Blank
+          </button>
+        </div>
+      </div>
+
       <div class="simulator-layout">
         <!-- Stimulus Panel -->
         <div class="stimulus-card">
           <div class="stimulus-image-wrap">
-            <img id="stimulusImage" src="assets/images/scene_engineering.jpg" alt="TAT Picture Prompt">
+            <img id="stimulusImage" src="assets/images/tat/tat_1.webp" alt="SSB Picture Prompt">
             <div id="observationOverlay" class="observation-overlay" style="display: none;">
               <span style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">OBSERVE THE SCENE</span>
               <div id="observeTimerDisplay" class="observation-timer-text">30s</div>
@@ -457,16 +512,16 @@
               <div>
                 <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase;">Prompt Stimulus</span>
                 <h3 id="stimulusTitle" style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem;">
-                  Civil Infrastructure & Bridge Construction
+                  SSB TAT Board Scenario #1
                 </h3>
               </div>
             </div>
 
             <p id="stimulusCue" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0.75rem 0;">
-              Three engineers review blueprints at dusk next to a deep excavation area and bridge pillar.
+              Authentic historical SSB TAT picture stimulus #1. Observe the characters, immediate environment, background tension, and formulate an objective leadership response.
             </p>
 
-            <div>
+            <div id="stimulusRolesContainer">
               <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.35rem;">
                 Suggested Protagonist Roles (Click to autofill):
               </span>
@@ -474,7 +529,7 @@
             </div>
 
             <!-- Slide Selector -->
-            <div style="margin-top: 1.25rem;">
+            <div id="stimulusSelectorWrap" style="margin-top: 1.25rem;">
               <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">
                 Select Practice Scene:
               </label>
@@ -493,6 +548,44 @@
 
             <div id="writingTimerBadge" class="writing-timer-badge">
               ⏱️ 4:00
+            </div>
+          </div>
+
+          <!-- Stage-1 PPDT Interactive Box Section -->
+          <div id="ppdtWorkspaceSection" class="ppdt-workspace-box" style="display: none;">
+            <div class="ppdt-box-header">
+              <div>
+                <h4 style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--accent-secondary);">
+                  📦 Stage-1 PPDT Box (50mm × 50mm Standard)
+                </h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                  Click inside the box to plot characters. Enter Age, Gender (M/F/P), Mood (+/0/-), and circle your Hero.
+                </p>
+              </div>
+              <button onclick="window.simulator.clearPPDTBox()" class="btn-sm" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-sm); padding: 0.35rem 0.75rem; cursor: pointer; font-size: 0.8rem;">
+                Clear Box
+              </button>
+            </div>
+
+            <div class="ppdt-box-grid">
+              <div id="ppdtInteractiveBox" class="ppdt-interactive-box" title="Click inside this box to plot a character"></div>
+              <div class="ppdt-box-guidelines">
+                <span id="ppdtCharCountStatus" style="font-size: 0.85rem; font-weight: 600; color: var(--accent-primary); display: block; margin-bottom: 0.5rem;">
+                  0 character(s) marked. ⚠️ No hero circled yet.
+                </span>
+                <ul style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-left: 1rem;">
+                  <li><strong>Hero Designation</strong>: The circled character is your main protagonist.</li>
+                  <li><strong>Mood Legend</strong>: <code>+</code> (Positive / Constructive), <code>0</code> (Neutral), <code>-</code> (Negative / Distressed).</li>
+                  <li><strong>Time Budget</strong>: 1 minute to mark box & action header, 3 minutes to write story.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="margin-top: 0.75rem;">
+              <label for="ppdtActionInput" style="font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 0.25rem;">
+                PPDT Action Header (What led to the scene / What is being executed):
+              </label>
+              <input type="text" id="ppdtActionInput" class="filter-select" style="width: 100%; padding: 0.55rem 0.85rem;" placeholder="e.g. Inspecting breached irrigation bund and organizing village youth for sandbag reinforcement.">
             </div>
           </div>
 
@@ -521,6 +614,34 @@ Tip: Name your protagonist, state age & profession, define what caused the situa
           <div id="evaluationResultsArea" class="evaluation-results-box"></div>
         </div>
       </div>
+    </main>
+
+    <!-- TAB: Intel & Study Library -->
+    <main id="tab-library" class="tab-panel">
+      <div class="blueprint-hero">
+        <span class="hero-tag">Curated Intelligence Vault</span>
+        <h2 class="hero-title">SSB Intel & Preparation Library</h2>
+        <p class="hero-desc">
+          Access 16 essential high-yield defense preparation manuals, official PIQ form templates, Officer Intelligence Rating (OIR) test booklets, 180 Situation Reaction Test (SRT) banks, Word Association Test (WAT) sets, and Ground Testing Officer (GTO) obstacle blueprints.
+        </p>
+      </div>
+
+      <!-- Stage Filter Chips -->
+      <div id="intelStageChips" class="domain-chips-scroller" style="margin-bottom: 1.5rem;"></div>
+
+      <!-- Search & Count Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <div class="search-input-wrap" style="flex: 1; min-width: 260px;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="intelSearchInput" class="search-input" placeholder="Search intel documents by title, test stage, or subject...">
+        </div>
+        <span id="intelResultsCount" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
+          Showing 16 curated documents
+        </span>
+      </div>
+
+      <!-- Intel Document Grid -->
+      <div id="intelLibraryGrid" class="intel-library-grid"></div>
     </main>
 
     <!-- TAB 6: Master Checklist & Pitfalls -->
@@ -770,9 +891,11 @@ Tip: Name your protagonist, state age & profession, define what caused the situa
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
+  <script src="js/stimuli-data.js"></script>
   <script src="js/graph.js"></script>
   <script src="js/explorer.js"></script>
   <script src="js/situation-bank.js"></script>
+  <script src="js/intel-library.js"></script>
   <script src="js/simulator.js"></script>
   <script src="js/app.js"></script>
 </body>

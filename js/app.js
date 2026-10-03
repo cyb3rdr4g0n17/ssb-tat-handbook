@@ -64,6 +64,15 @@ class AppController {
       });
       window.simulator = this.simulator;
     }
+    if (window.IntelLibrary) {
+      this.intelLibrary = new IntelLibrary({
+        containerId: 'intelLibraryGrid',
+        searchId: 'intelSearchInput',
+        stageFilterId: 'intelStageFilter',
+        countId: 'intelResultsCount'
+      });
+      window.intelLibrary = this.intelLibrary;
+    }
   }
 
   setupNavigation() {

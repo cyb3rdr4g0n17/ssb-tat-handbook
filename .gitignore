@@ -19,4 +19,6 @@ __pycache__/
 # Agent & Ide Artifacts
 .agents/
 *.docx
+*.zip
+tat_images/
 graphify-out/cache/
